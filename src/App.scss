@@ -1,0 +1,24 @@
+$c1: #364FD9;
+$c2: #F2CE1B;
+$c3: #0F26A6;
+
+body{
+    background-color:$c2;
+    color: $c3;
+    font-family: Helvetica;
+}
+
+// Selection Color
+::selection {
+    background: white; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: white; /* Gecko Browsers */
+  }
+
+::-webkit-scrollbar-thumb{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    height: 10px;
+}
