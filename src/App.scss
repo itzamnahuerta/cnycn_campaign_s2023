@@ -1,10 +1,8 @@
-$c1: #364FD9;
-$c2: #F2CE1B;
-$c3: #0F26A6;
+@import './styles/Theme';
 
 body{
-    background-color:$c2;
-    color: $c3;
+    background-color: white;
+     color: $c3;
     font-family: Helvetica;
 }
 
