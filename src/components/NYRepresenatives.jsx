@@ -1,122 +1,147 @@
-import React, {Component, useEffect, useState} from 'react';
+import React ,{useEffect, useState, useRef} from 'react'
 import '../styles/NYRepresentatives.scss';
-import aData from '../data/assemblyDF_Mem_HomesFlipped.csv';
+import aData from '../data/Assembly_HomesFlipped.csv';
+import sData from '../data/Senate_HomesFlipped.csv';
 import * as d3 from 'd3';
 
-export default function NYRepresentatives() {
 
-    // States for Datasets
-    const [assemblyData, setAssemblyData] = useState(null)
-    const [toggleOn, setToggleOn] = useState(true)
-
-
-    // Function that accepts any data and state where the string object is stored
-    const fetchText = async(data, stateName) => { // asynchronous call puts a request and wait to some time for a result
-
-        fetch(data)
-            .then((res) => {
-                if(res.ok){
-                    return res.text()
-                }
-                throw new Error('Server says bad response')
-            })
-            .then((res) => stateName(res))
-            .catch((err) => console.log(err))
-    }
-
-    // Instantiating the function to fetch data for Assembly Members
-    fetchText(aData, setAssemblyData)
+export default function NYRepresenatives() {
+    // State Containers for Datsets
+    const [assemblyData, setAssemblyData] = useState(null);
+    const [senateData, setSenateData] = useState(null);
+    const [barViz, setBarViz] = useState('assembly');
 
 
-    function showAssembly(event){
-        if(disabled){
-            console.log("is this true??")
+    const d3Container = useRef(null);
+
+
+    //  -- - - -- - - - -- - -- - -- -- -- - -- -- - -- - -- -
+
+
+    // Chart Dimensions
+    const margin = {top: 20, right: 50, bottom: 40, left: 30};
+    const width = 300 - margin.left - margin.right;
+    const height = 600;
+
+
+
+    useEffect(() => {
+        if(barViz == 'assembly') {
+            d3.csv(aData).then(assemblyBar)
+        } else if(barViz == 'senate') {
+            d3.csv(sData).then(senateBar)
         }
-        
-        // Parsing the data to CSV and saving it to a variable
-        let data = d3.csvParse(assemblyData) // d3.csvParse takes a csv string & return an array of objects, each object represent one row of each table
+    }, [barViz])
 
-        // Verifying that data is a object
-        console.log(data)
+    // Assembly Bar Chart
+    const assemblyBar = (data) => {
+        console.log("assembly data:", data)
 
-        // Chart Dimensions
-        const margin = {top: 20, right: 30, bottom: 40, left: 140};
-        const width = 370 - margin.left - margin.right;
-        const height = 750;
-
-
-        // Retrieving Columns/Features from DataFrame
+        // Formatting the data
         data.forEach(d => {
-            d.gbat_assemblyDistrict = d.gbat_assemblyDistrict;
+            d.assemblyDistrict = d.assemblyDistrict;
             d.homesFlipped = +d.homesFlipped;
             d.memberName = d.memberName;
         })
 
-
         // Sorting data by Homes Flipped and saving to a new variable
-        let sortedData = data.sort( function(a,b) {return d3.descending(a.homesFlipped, b.homesFlipped) } )
+        let sortedData = data.sort(function(a,b){
+            return d3.descending(a.homesFlipped,
+                    b.homesFlipped)
+            })
 
-
-        // Create SVG
-        const svg = d3.select('#assembly')
-                        .append('svg')
-                        .attr('width', width + margin.left + margin.right)
-                        .attr('height', height + margin.top + margin.bottom)
-                        .append('g')
-                        .attr('transform', 
-                            'translate(' + margin.left + ',' + margin.top + ')')
- 
         // Maximum number in homes flipped 
         const max = d3.max(sortedData, d => d.homesFlipped)
-        console.log(max)
-
-        // Add x axis 
-        const x = d3.scaleLinear()
-                    .domain([0, max])
-                    .range([0, width])
-        svg.append('g')
-            .attr('transform', 'translate(0' + height + ')')
-            // .call(d3.axisBottom(x))
-            .selectAll('text')
-            // .attr('transform', 'translate(-10, 0)rotate(-45)')
-            .style('text-anchor', 'end')
-            
-       
-        // add y axis
-        const y = d3.scaleBand()
-                    .range([0, height])
-                    .domain(sortedData.map(d =>  d.memberName  ))
-                    .padding(0.2) 
-            
-        svg.append('g')
-            .call(d3.axisLeft(y))
-            .style('margin-top',34)
-            // .style('color' ,'orange')
         
-        // bars
-        svg.selectAll('rects')
+        // Add X Axis
+        const widthScale = d3.scaleLinear()
+        .domain([0, max])
+        .range([0, width])
+
+        // Position of where the bar should be in the screen
+        const positionScale = d3.scaleBand()
+        .range([0, height])
+        .domain(sortedData.map(d =>  d.memberName))
+        .padding(0.3) 
+        
+
+        // Container for Bar Chart
+        const container = d3.select(d3Container.current)
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+
+
+        // Selecting all the rects and joining it with our data, one rect for each member in our data
+        let g = container
+            .selectAll('g')
             .data(sortedData)
             .enter()
+            .append('g')
+
+        // Homes Flipped Text
+        g.append('text')
+        .attr('x', function(d) {return widthScale(d.homesFlipped) + 6})
+        .attr('y', function(d) {return positionScale(d.memberName) + 4})
+        .attr('fill','black')
+        .style("font-size", "10px")
+        .attr("dy", ".35em")
+        .text(function (d) {return d.homesFlipped})
+
+        g.append('text')
+            .attr('x', function(d) {return 10 - widthScale(d.homesFlipped) })
+            .attr('y', function(d) {return positionScale(d.memberName) + 20})
+            .attr('fill','black')
+            .style("font-size", "9px")
+            .attr("dy", ".35em")
+            .text(function (d) {return  d.assemblyDistrict + ' - ' + d.memberName})
+
+        // Setting Bar Chart size 
+        let bars = g
             .append('rect')
-            .attr('x', x(0))
-            .attr('y', function(d) {return y(d.memberName)})
-            .attr('width', function(d) {return x(d.homesFlipped)})
-            .attr("height", y.bandwidth() )
-            .attr("fill", "#69b3a2")
+            .attr('fill', 'blue')
+            .attr('width', d => widthScale(d.homesFlipped))
+            .attr('height', positionScale.bandwidth())
+            .attr('y', d => positionScale(d.memberName))
+    
+        bars.exit().remove();
+
+
+        
+      
     }
 
- 
+
+
+    const senateBar = (data) => {
+        console.log("senate data: ",data)
+        const svg = d3.select(d3Container.current);
+    }
 
 
 
-    return (
-    <section className='ny__reps'>
 
+  return (
+
+    <section className="ny__reps">
         <h1> Homes Flipped in New York City 2017 - 2021 by State Legislative District </h1>
-        <button onClick={showAssembly} disabled={disabled}>Assembly District  </button>
-        <button >Senate District </button>
-   
-        <div id='assembly'> </div>
+
+        <div>
+            <button 
+                className="button"
+                onClick={() => setBarViz('assembly')}> 
+                Assembly Districts 
+            </button>
+
+            <button
+                className='button'
+                onClick={() => setBarViz('senate')}>
+                Senate Districts 
+            </button>
+        </div>
+
+        <svg ref={d3Container}></svg>
+
     </section>
   )
 }
