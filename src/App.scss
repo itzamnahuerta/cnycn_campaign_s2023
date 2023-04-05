@@ -1,21 +1,21 @@
 @import './styles/Theme';
 
 body{
-    background-color: white;
+    background-color: $c6;
      color: $c3;
     font-family: Helvetica;
 }
 
 // Selection Color
 ::selection {
-    background: white; /* WebKit/Blink Browsers */
+    background: $c6; /* WebKit/Blink Browsers */
   }
   ::-moz-selection {
     background: white; /* Gecko Browsers */
   }
 
 ::-webkit-scrollbar-thumb{
-    background-color: white;
+    background-color: $c6;
     border: 1px solid black;
     border-radius: 15px;
     height: 10px;

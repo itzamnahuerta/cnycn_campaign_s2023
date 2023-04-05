@@ -1,6 +1,128 @@
 @import 'Theme';
 
-.ny__reps{
-    height: 100vh ;
-    font-family: Karelia;
+@media only screen and (max-width:600px){
+
+    .ny__reps{
+        height: auto;
+        font-family: Karelia;
+        margin-bottom: 4em;
+        h2{
+            border-left: 4px solid $c3;
+            padding-left: 1em;
+        }
+    }
+    
+    #ny__reps__note{
+        font-size: .6em;
+    }
+    .ny__reps__btns{
+        border-bottom: 1px solid blue;
+        display: flex;
+        justify-content: center;
+        
+        .button{
+            border: none;
+            background-color: white;
+            color:$c3;
+            font-family: Kalice;
+            height: 5vh;
+            width: 90%;
+            &:focus{
+                background-color: $c3;
+                color: $c6;
+            }
+    
+    
+        }
+    }
+    
+    .tooltipContainer {
+        line-height: 1.1;
+        font-weight: bold;
+        padding: .6em 1em .6em 1em;
+        border-radius: .4em;
+        font-weight: 600;
+        box-shadow: 0em 0em .5em rgb(165, 163, 163);
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+      }
+    .img__map__a{
+        width: 120%;
+    }
+      .img__map{
+        margin-top: 3em;
+        width:100%;
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 600px){
+    .ny__reps{
+
+        height: auto;
+        font-family: Karelia;
+        margin-bottom: 4em;
+        h2{
+            font-size:calc(100vw / 30);
+            // border-left: 4px solid $c3;
+            padding-left: 1em;
+        }
+    }
+
+
+
+    .ny__reps__wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        #ny__reps__note{
+            font-size: .6em;
+            // margin-left: -15em;
+        }
+
+        .ny__reps__btns{
+            width: 40vw;
+            border-bottom: 5px solid $c3;
+            display: flex;
+            justify-content: center;
+            
+            .button{
+                border: none;
+                background-color: white;
+                color:$c3;
+                font-family: Kalice;
+                height: 5vh;
+                width: 90%;
+                &:active{
+                    background-color: $c3;
+                    color: $c6;
+                }
+                &:focus{
+                    background-color: $c3;
+                    color: $c6;
+                }
+                &:target {
+                    background-color: $c3;
+                    color: $c6;
+                  }
+        
+        
+            }
+        }
+    }
+    .vis__container{
+     
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        .img__map{
+            width: 35%;
+        }
+    }
+
+
+
 }
