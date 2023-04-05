@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@svgr/webpack": "^7.0.0"
+    "@svgr/webpack": "^7.0.0",
+    "cross-env": "^7.0.3"
   }
 }

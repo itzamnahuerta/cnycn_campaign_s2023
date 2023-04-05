@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.932b65a7.css",
+    "main.js": "/static/js/main.0978cf75.js",
+    "static/js/787.b09e45f2.chunk.js": "/static/js/787.b09e45f2.chunk.js",
+    "static/media/senator_HF.geojson": "/static/media/senator_HF.7b6c0943f9b629cd14b2.geojson",
+    "static/media/assembly_HF.geojson": "/static/media/assembly_HF.e56814e83d5fa6fc5c43.geojson",
+    "static/media/density_HF.png": "/static/media/density_HF.3a238fff2b450875c07f.png",
+    "static/media/senate_svg_hf.svg": "/static/media/senate_svg_hf.b08cc7ba03a99f397bdaedea974b36cd.svg",
+    "static/media/assembly_HF.svg": "/static/media/assembly_HF.34438e74ed29358d6c90efc69b7871f5.svg",
+    "static/media/KareliaWeb-Regular.otf": "/static/media/KareliaWeb-Regular.cf10037406528b664509.otf",
+    "static/media/Kalice-Regular.otf": "/static/media/Kalice-Regular.215324be7680040439b1.otf",
+    "static/media/Assembly_HomesFlipped.csv": "/static/media/Assembly_HomesFlipped.9d56ca845008132e729c.csv",
+    "static/media/Senate_HomesFlipped.csv": "/static/media/Senate_HomesFlipped.01735739c5f128461bd2.csv",
+    "index.html": "/index.html",
+    "main.932b65a7.css.map": "/static/css/main.932b65a7.css.map",
+    "main.0978cf75.js.map": "/static/js/main.0978cf75.js.map",
+    "787.b09e45f2.chunk.js.map": "/static/js/787.b09e45f2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.932b65a7.css",
+    "static/js/main.0978cf75.js"
+  ]
+}
