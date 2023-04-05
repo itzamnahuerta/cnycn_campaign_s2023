@@ -27,10 +27,18 @@
             font-family: Kalice;
             height: 5vh;
             width: 90%;
+            &:active{
+                background-color: $c3;
+                color: $c6;
+            }
             &:focus{
                 background-color: $c3;
                 color: $c6;
             }
+            &:target {
+                background-color: $c3;
+                color: $c6;
+              }
     
     
         }
