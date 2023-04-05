@@ -31,11 +31,10 @@ export default function About() {
 
     <ScrollPage className="section__2" page={1}>
           <Animator animation={MoveIn(-400, 200)} >
-          <div id='s2__overview'>
+          <div>
             <h2 >
               Predatory house-flipping, which drives up housing costs, is a citywide issue concentrated in the charts and maps below. <br/>
             </h2> 
-
             </div>
           </Animator>
       </ScrollPage>
