@@ -2,20 +2,26 @@
 import './App.scss';
 import About from './components/About.jsx';
 import NYRepresenatives from './components/NYRepresenatives.jsx';
-import LegislativeMap from './components/LegislativeMap';
-
+import Title from './components/Title';
 import DensityMap from './components/DensityMap';
 
 
 function App() {
+  window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+  }, false);
+  
   return (
-    <div>
+    <section>
+      <div className="progress"></div>
+
+      <div className="page__wrap">
+      <Title/>
       <About/>
       <DensityMap/>
       <NYRepresenatives/>
-
-      {/* <LegislativeMap/> */}
-    </div>
+      </div>
+    </section>
   );
 }
 

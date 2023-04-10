@@ -1,136 +1,185 @@
 @import 'Theme';
 
 @media only screen and (max-width:600px){
-
     .ny__reps{
+        background-color: #D5D2CB;
         height: auto;
-        font-family: Karelia;
-        margin-bottom: 4em;
-        h2{
-            border-left: 4px solid $c3;
-            padding-left: 1em;
-        }
-    }
-    
-    #ny__reps__note{
-        font-size: .6em;
-    }
-    .ny__reps__btns{
-        border-bottom: 1px solid blue;
+        border-top: 1px solid $c3;
         display: flex;
-        justify-content: center;
-        
-        .button{
-            border: none;
-            background-color: white;
+        flex-direction: column;
+        .nyr__1{
+            width: 80%;
+            margin-top: 10%;
+            padding-left: 3em;
+
+            #nyr__head{
+             
+                display: inline;
+                font-size: 2em;
+                color:$c3;
+                margin-bottom: 1em;
+            }
+            #nyr__subhead{
+                border-left: 2px solid $c3;
+                padding-left: 1em;
+                color:$c3;
+                font-size: 1em;
+            }
+        }
+        .nyr__2{
+            // border: 2px solid red;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .nyr__3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             color:$c3;
-            font-family: Kalice;
-            height: 5vh;
-            width: 90%;
-            &:active{
-                background-color: $c3;
-                color: $c6;
+            margin-top: 1em;
+
+            .ny__reps__btns{
+                display: flex;
+                justify-content: center;
+                
+                .button{
+                    border: 2px solid $c7;
+                    background-color: $c3;
+                    color:$bg;
+                    border-radius: 25px;
+                    height: 5vh;
+                    width: 160px;
+                    margin:.5%;
+                   
+                    &:active{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:focus{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:target {
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                      }
+                }
+
             }
-            &:focus{
+            #ny__reps__note{
+                font-size: .7em;
                 background-color: $c3;
-                color: $c6;
+                color: $bg;
             }
-            &:target {
-                background-color: $c3;
-                color: $c6;
-              }
-    
-    
+        }
+        .nyr__4{
+            margin-left: 5%;
+            display: flex;
+            flex-direction: column;
+            .img__map{
+                margin-top: 3em;
+                width: 90%;
+            }
+        } 
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
         }
     }
-    
-    .tooltipContainer {
-        line-height: 1.1;
-        font-weight: bold;
-        padding: .6em 1em .6em 1em;
-        border-radius: .4em;
-        font-weight: 600;
-        box-shadow: 0em 0em .5em rgb(165, 163, 163);
-        font-size: 1rem;
-        font-family: 'Roboto', sans-serif;
-      }
-    .img__map__a{
-        width: 120%;
-    }
-      .img__map{
-        margin-top: 3em;
-        width:100%;
-        height: 100%;
-    }
+
+
 }
+
 
 
 @media only screen and (min-width: 600px){
     .ny__reps{
-
-        height: auto;
-        font-family: Karelia;
-        margin-bottom: 4em;
-        h2{
-            font-size:calc(100vw / 30);
-            // border-left: 4px solid $c3;
-            padding-left: 1em;
-        }
-    }
-
-
-
-    .ny__reps__wrapper{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        #ny__reps__note{
-            font-size: .6em;
-            // margin-left: -15em;
-        }
-
-        .ny__reps__btns{
-            width: 40vw;
-            border-bottom: 5px solid $c3;
-            display: flex;
-            justify-content: center;
-            
-            .button{
-                border: none;
-                background-color: white;
-                color:$c3;
-                font-family: Kalice;
-                height: 5vh;
-                width: 90%;
-                &:active{
-                    background-color: $c3;
-                    color: $c6;
-                }
-                &:focus{
-                    background-color: $c3;
-                    color: $c6;
-                }
-                &:target {
-                    background-color: $c3;
-                    color: $c6;
-                  }
-        
-        
-            }
-        }
-    }
-    .vis__container{
-     
+        background-color: #D5D2CB;
+        height: 100vh;
+        border-top: 1px solid $c3;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        .img__map{
-            width: 35%;
+
+        .nyr__1{
+            justify-items: center;
+            width: 30%;
+            margin-top: 10%;
+            padding-left: 3em;
+
+            h2{
+             
+                display: inline;
+                font-size: 4em;
+                color:$c3;
+            }
+            #nyr__subhead{
+           
+                font-size: 2em;
+            }
+        }
+        .nyr__2{
+            display:flex;
+            flex-direction: column;
+            // align-items: center;
+            width: 70%;
+
+        }
+        .nyr__3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color:$c3;
+            margin-top: 5em;
+            .ny__reps__btns{
+                display: flex;
+                justify-content: center;
+                
+                .button{
+                    border: 2px solid $c7;
+                    background-color: $c3;
+                    color:$bg;
+                    border-radius: 25px;
+                    height: 5vh;
+                    width: 200px;
+                   
+                    &:active{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:focus{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:target {
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                      }
+                }
+
+            }
+            #ny__reps__note{
+                font-size: .7em;
+                // margin-left: -6em;
+                background-color: $c3;
+                color: $bg;
+            }
+        }
+        .nyr__4{
+            margin-left: 25%;
+            display: flex;
+            flex-direction: row;
+            .img__map{
+                width: 50%;
+            }
+        } 
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
         }
     }
-
-
-
 }

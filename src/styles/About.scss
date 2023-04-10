@@ -1,171 +1,375 @@
 @import 'Theme';
 
 @media only screen and (max-width:600px){
-    .section__1{
+    .about__container__1{
+        background-size: cover;
+        background-color: #D5D2CB;
         height: 100vh;
-        border: 2px solid $c3;
-        .s1__title{
-            font-size: 5vh;
-            font-family: Karelia;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(4,1fr);
+        #a1{
+            position: relative;
+            z-index: 5;
+            grid-column: 3/5;
+            grid-row: 1/2;
+            font-size:calc(100vw / 15);
+            margin-left: -1.5em;
+            margin-top: 2em;
+            justify-self: center;
+            padding: .5em;
+        }
+        #a2{
+            position: relative;
+            z-index: 10;
+            grid-column: 3/5;
+            grid-row: 2/3;
+            justify-self: center;
+            font-size:calc(100vw / 25);
+            // margin: top 5px;em;
+            border-top: .4px solid  $c3;
+        }
+        #nyc__img{
+            position: relative;
+            z-index: 0;
+            margin: 10em 0 0 1em;
+            grid-column: 1/6;
+            grid-row: 2/6;
+            background-image: url('../imgs/nyc_outline_1.svg');
+            background-repeat: no-repeat;
+        }
+        #btn__maps{
+            width: 200px;
+            height:3em;
+            border-radius: 2em;
+            background-color: $c3;
+            color: $bg;
+            border: none;
         }
     }
 
-    .section__2{
-        border: 2px solid $c3;
-        height: 100vh !important;
-        h2{
+    .about__container__2{
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(4,1fr);
+        border-top: 1px solid $c3;
+
+        #b1{
+            grid-column: 2/5;
+            grid-row: 2/3;
+            font-size:calc(100vw / 25);
+        }
+        #b2{
+            grid-column: 2/5;
+            grid-row:3/5;
+            font-size:calc(100vw / 25);
+        }
+        #line__b3{
+            border-left: 3px solid $c3;
+            grid-column: 2/5;
+            grid-row: 2/3;
+            height: 60%;
             margin-top: 5em;
-            font-size:calc(100vw / 15);
-            padding: 10%;
-            font-family: Karelia;
-           
+        }
+        #bill{
+            a{
+            // background-color: $c3;
+            color:$c7;
+            text-decoration: underline;
+            }
         }
     }
 
+    .about__container__3{
+        background-size: cover;
+        background-color: #D5D2CB;
+        width: 100vw;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-rows:  repeat(5,1fr);
+        border-top: 1px solid $c3;
 
-    .section__3{
-        border: 2px solid $c3;
-        
-        height: 100vh !important;
-        text-align: center;
-        h2{
-            padding: 10%;
-            font-size:calc(100vw / 15);
-            font-family: Karelia;
-            margin-top: 3em;
-        }
-    }
-    .section__4{
-        border: 2px solid $c3;
-        
-        height: 100vh !important;
-        text-align: center;
-        h2{
-            padding: 10%;
-            font-size:calc(100vw / 19);
-            font-family: Karelia;
-            margin-top: 3em;
-        }
-        #s2__note{
-            display: block;
-            font-size: 10pt;
-            text-align: center;
-            margin-top: -1em;
-            margin-left:-2%;
-        }
-    }
-    
-
-
-    .section__5{
-        padding: 10%;
-        background-color: $c3;
-        height: 100vh !important;
-        color: $c6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: Karelia;
-        #e1{
+        #flips_total{
             font-size: 2em;
+            -webkit-text-fill-color: $c7; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: $c3;
         }
-        #e2{
-            background-color: $c6;
-            color: $c3;
-            margin-top: -5%;
-            font-size: 6em;
+
+        #c1{
+            grid-column: 1/6;
+            grid-row: 1/2;
+            font-size:1em;
+            border-radius: 25px;
+            border:4px solid $c3;
+            padding: 0.5em;
+            margin-left: 1em;
+            text-align: center;
+            // -webkit-text-fill-color: #D5D2CB;
+            // -webkit-text-stroke-width: 2px;
+            // -webkit-text-stroke-color: $c3;
         }
-        #e3{
-            width: 100%;
-            margin-top: -15%;
-            padding: 10px;
-            font-size: 3vh;
+        #c2{
+            grid-column: 2/8;
+            grid-row: 3/7;
+            background-image: url('../imgs/year_borough_chart.svg');
+            background-repeat: no-repeat;
+        }
+        #c3{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            #queensImg{
+                width: 40%;
+            }
+
+        }
+        #c4{
+            grid-column: 2/3;
+            grid-row: 3/4;
+            #bkImg{
+                width: 40%;
+            }
+        }
+        #c5{
+            grid-column: 2/3;
+            grid-row: 4/5;
+            #bxImg{
+                width: 40%;
+            }
+
+        }
+        #c6{
+            grid-column: 2/3;
+            grid-row: 5/6;
+
+            #manImg{
+                width: 40%;
+            }
+        }
+        #c7{
+            grid-column: 4/6;
+            grid-row: 2/3;
+            #c7-a{
+                font-size:.8em;
+            }
+            #c7-b{
+                color:$c7;
+                font-size:2em;
+                display: inline;
+            }
+
+        }
+        #c8{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            font-size:2em;
+            display: inline;
+ 
+
+        }
+        #c9{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            font-size:2em;
+        
+        }
+        #c10{
+            grid-column: 4/5;
+            grid-row: 5/6;
+            font-size:2em;
         }
     }
+
+    
 }
+
 
 @media only screen and (min-width: 600px){
-
-    .section__1{
-        border: 4px solid $c3;
-        font-size:calc(100vw / 30);
+    .about__container__1{
+        background-size: cover;
+        background-color: #D5D2CB;
         height: 100vh;
-        text-align: center;
-        font-family: Karelia;
-    }
-      
-    .section__2{
-        border: 4px solid $c3;
-        height: 100vh !important;
-        padding: 5%;
-        
-        text-align: center;
-        font-size:calc(100vw / 40);
-        h2{
-            padding: 10%;
-            font-family: Karelia;
-            margin-top: 4em;
-        }
-    }
-
-    .section__3{
-        border: 4px solid $c3;
-        
-        height: 100vh !important;
-        text-align: center;
-        h2{
-            padding: 10%;
-            font-size:calc(100vw / 30);
-            font-family: Karelia;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(4,1fr);
+        #a1{
+            grid-column: 3/5;
+            grid-row: 2/3;
+            font-size:calc(100vw / 35);
+            // margin-left: 1em;
             margin-top: 2em;
+            justify-self: center;
+            padding: .5em;
         }
-    }
-    .section__4{
-        border: 4px solid $c3;
-        font-family: Karelia;
-        padding: 10%;
-        height: 100vh !important;
-        h2{
-            font-size:calc(100vw / 30);
-            padding: 10%;
-            font-family: Karelia;
-            margin-top: 4em;
+        #a2{
+            grid-column: 3/5;
+            grid-row: 3/4;
+            justify-self: center;
+            font-size:calc(100vw / 55);
+            margin-top:2em;
+            border-top: .4px solid  $c3;
         }
-        #s2__note{
-            display: block;
-            font-size: 10pt;
-            text-align: center;
-            margin-top: -1em;
-            margin-left:-2%;
+        #nyc__img{
+            margin-left: 1em;
+            grid-column: 1/3;
+            grid-row: 3/5;
+            background-image: url('../imgs/nyc_outline_1.svg');
+            background-repeat: no-repeat;
         }
-    }
-    
-    .section__5{
-        padding: 10%;
-        background-color: $c3;
-        height: 100vh !important;
-        color: $c6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-family: Karelia;
-        #e1{
-            font-size: 4em;
-        }
-        #e2{
-            background-color: $c6;
-            color: $c3;
-            margin-top: -5%;
-            font-size: 10em;
-        }
-        #e3{
-            width: 100%;
-            margin-top: -10%;
-            padding: 10px;
-            font-size:4em;
-        }
-    } 
-}
+        #btn__maps{
+            width: 300px;
+            height:3em;
+            border-radius: 2em;
+            background-color: $c3;
+            color: $bg;
+            border: none;
 
+
+        }
+
+    }
+    .about__container__2{
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(4,1fr);
+        border-top: 1px solid $c3;
+
+        #b1{
+            grid-column: 2/5;
+            grid-row: 2/3;
+            font-size:calc(100vw / 35);
+        }
+        #b2{
+            grid-column: 2/5;
+            grid-row:3/5;
+            font-size:calc(100vw / 35);
+        }
+        #line__b3{
+            border-left: 3px solid $c3;
+            grid-column: 2/5;
+            grid-row: 2/3;
+            height: 30%;
+            margin-top: 13em;
+        }
+        #bill{
+            a{
+                color:$c7;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .about__container__3{
+        background-size: cover;
+        background-color: #D5D2CB;
+        width: 100vw;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-rows:  repeat(5,1fr);
+        border-top: 1px solid $c3;
+
+        #flips_total{
+            font-size: 2em;
+            -webkit-text-fill-color: $c7; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: $c3;
+        }
+        #c1{
+            grid-column: 1/3;
+            grid-row: 1/6;
+            font-size:4em;
+            border-radius: 25px;
+            border:4px solid $c3;
+            padding: 0.5em;
+            margin-left: 1em;
+            text-align: center;
+            // -webkit-text-fill-color: #D5D2CB;
+            // -webkit-text-stroke-width: 2px;
+            // -webkit-text-stroke-color: $c3;
+
+        }
+        #c2{
+            grid-column: 2/8;
+            grid-row: 3/7;
+            background-image: url('../imgs/year_borough_chart.svg');
+            background-repeat: no-repeat;
+        }
+        #c3{
+            grid-column: 4/5;
+            grid-row: 1/2;
+            margin-top: 2em;
+            #queensImg{
+                width: 40%;
+            }
+
+        }
+        #c4{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            margin-top: 1em;
+            #bkImg{
+                width: 40%;
+            }
+        }
+        #c5{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            margin-top: 1em;
+            #bxImg{
+                width: 40%;
+            }
+
+        }
+        #c6{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            margin-top: 1em;
+            #manImg{
+                width: 40%;
+            }
+        }
+        #c7{
+            grid-column: 5/6;
+            grid-row: 1/2;
+            margin-top: 1.4em;
+            #c7-a{
+                // margin-top: 3em;
+            }
+            #c7-b{
+                color:$c7;
+                font-size:3em;
+            }
+
+        }
+        #c8{
+            grid-column: 5/6;
+            grid-row: 2/3;
+            font-size:3em;
+
+        }
+        #c9{
+            grid-column: 5/6;
+            grid-row: 3/4;
+            font-size:3em;
+        }
+        #c10{
+            grid-column: 5/6;
+            grid-row: 4/5;
+            font-size:3em;
+        }
+    }
+}

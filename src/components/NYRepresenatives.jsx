@@ -4,8 +4,8 @@ import aData from '../data/Assembly_HomesFlipped.csv';
 import sData from '../data/Senate_HomesFlipped.csv';
 import * as d3 from 'd3';
 
-import assemblyImg from '../imgs/assembly_HF.svg'
-import senateImg from '../imgs/senate_svg_hf.svg'
+import assemblyImg from '../imgs/assembly_HF.png'
+import senateImg from '../imgs/senate_HF.png' 
 
 
 export default function NYRepresenatives() {
@@ -71,10 +71,8 @@ export default function NYRepresenatives() {
             .style('z-index', '10')
             .style('visibility', 'hidden')
             .style('padding', '10px')
-            .style('background', 'rgba(15, 10, 222,0.7)')
-            .style('border-radius', '4px')
-            .style('box-shadow','0em 0em .5em rgb(165, 163, 163)')
-            .style('backdrop-filter','blur(5px)')
+            .style('border-radius','25pt')
+            .style('background', 'rgba(235,95,42,0.8)')
             .style('color', 'white');
 
         const u = d3.selectAll('rect').data(data)
@@ -154,39 +152,45 @@ export default function NYRepresenatives() {
   return (
 
     <section className="ny__reps">
-        <h2>HOMES FLIPPED IN NYC <br/> 2017 - 2021 BY STATE LEGISLATIVE DISTRICT   </h2>
 
-        <div className='ny__reps__wrapper'>
-
-     
-        <div className="ny__reps__btns">
-            <button 
-                className="button"
-                onClick={() => setBarViz('assembly')}> 
-                Assembly Districts 
-            </button>
-
-            <button
-                className='button'
-                onClick={() => setBarViz('senate')}>
-                Senate Districts 
-            </button>
-        </div>
-        <p id="ny__reps__note"> Click or hover for how many homes were flipped for each district </p>
+        <div className='nyr__1'>
+            <h2 id='nyr__head'>How many homes were flipped in your district? </h2> <br/>
+            <h2 id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legistlative </h2>
         </div>
 
-        <div className='tooltip__container'>
 
-            
-        </div>
+        <div className='nyr__2'>
+            <div className='nyr__3'>
+            <div className="ny__reps__btns">
+                <button 
+                    className="button"
+                    id='btn-left'
+                    onClick={() => setBarViz('assembly')}> 
+                    Assembly Districts 
+                </button>
 
-        <div className='vis__container'>
+                <button
+                    className='button'
+                    onClick={() => setBarViz('senate')}>
+                    Senate Districts 
+                </button>
+            </div>
+            <p id="ny__reps__note"> &nbsp; Click or hover for how many homes were flipped for each district&nbsp; </p>
+            </div>
+    
+            <div className='tooltip__container'></div>
+
+            <div className='nyr__4'>
             <svg className='vis__area' ref={d3Container}></svg>
-
+           
             {barViz == 'assembly' ? 
-            <img src={assemblyImg} className='img__map' />  : 
-            <img src={senateImg} className='img__map' /> }
+                <img src={assemblyImg} className='img__map' />  : 
+                <img src={senateImg} className='img__map' /> }
+             </div>
         </div>
+
+
+
 
 
 

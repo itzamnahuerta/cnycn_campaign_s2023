@@ -1,17 +1,68 @@
 @import './styles/Theme';
 
+html, body, .section, .slide {
+  /* Height and width fallback for older browsers. */
+  min-height: 100%;
+  min-width: 100%;
+
+  /* Set the height to match that of the viewport. */
+  min-height: 100vh;
+  
+  /* Set the width to match that of the viewport. */
+  min-width: 100vw;
+  
+  /* Remove any browser-default margins. */
+  margin: 0;
+}
+
 body{
-    background-color: $c6;
-     color: $c3;
-    font-family: Helvetica;
+    background-color: $c3;
+    padding: 0;
+    margin: 0;
+    animation: body 1s linear;
+}
+
+@keyframes progress {
+  to {
+    background-color: rgb(19, 48, 97);
+  }
+}
+
+.progress {
+  height: 6px;
+  width: 0%;
+  background-color: #EB5F2A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: progress 1s linear;
+}
+
+
+@keyframes progress {
+  to {
+    background-color: #EB5F2A;
+    width: 100%;
+  }
+}
+
+
+:root * {
+  /* Pause the animation */
+  animation-play-state: paused;
+  /* Bind the animation to scroll */
+  animation-delay: calc(var(--scroll) * -1s);
+  /* These last 2 properites clean up overshoot weirdness */
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
 }
 
 // Selection Color
 ::selection {
-    background: $c6; /* WebKit/Blink Browsers */
+    background: $c7; /* WebKit/Blink Browsers */
   }
   ::-moz-selection {
-    background: white; /* Gecko Browsers */
+    background: $c7; /* Gecko Browsers */
   }
 
 ::-webkit-scrollbar-thumb{
