@@ -81,7 +81,7 @@
             display: flex;
             flex-direction: column;
             .img__map{
-                margin-top: 3em;
+                margin-top: 2em;
                 width: 90%;
             }
         } 
@@ -95,44 +95,46 @@
 
 
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px)and (max-width:960px) {
     .ny__reps{
         background-color: #D5D2CB;
-        height: 100vh;
+        height: 120vh;
         border-top: 1px solid $c3;
         display: flex;
-        flex-direction: row;
-
+        flex-direction: column;
         .nyr__1{
-            justify-items: center;
-            width: 30%;
-            margin-top: 10%;
+            width: 80%;
+            margin-top: 5%;
             padding-left: 3em;
 
-            h2{
+            #nyr__head{
              
                 display: inline;
-                font-size: 4em;
+                font-size: 2em;
                 color:$c3;
+                margin-bottom: 1em;
             }
             #nyr__subhead{
-           
-                font-size: 2em;
+                border-left: 2px solid $c3;
+                padding-left: 1em;
+                color:$c3;
+                font-size: 1em;
             }
         }
         .nyr__2{
+            // border: 2px solid red;
             display:flex;
             flex-direction: column;
-            // align-items: center;
-            width: 70%;
-
+            justify-content: space-around;
         }
         .nyr__3{
+            // border: 3px solid yellowgreen;
             display: flex;
             flex-direction: column;
             align-items: center;
             color:$c3;
-            margin-top: 5em;
+            margin-top: 1em;
+
             .ny__reps__btns{
                 display: flex;
                 justify-content: center;
@@ -143,7 +145,8 @@
                     color:$bg;
                     border-radius: 25px;
                     height: 5vh;
-                    width: 200px;
+                    width: 160px;
+                    margin:.5%;
                    
                     &:active{
                         background-color: $bg;
@@ -165,17 +168,116 @@
             }
             #ny__reps__note{
                 font-size: .7em;
-                // margin-left: -6em;
                 background-color: $c3;
                 color: $bg;
             }
         }
         .nyr__4{
-            margin-left: 25%;
+            margin-left: 2%;
             display: flex;
             flex-direction: row;
+           
             .img__map{
+                margin-top: 2em;
                 width: 50%;
+                // height: auto;
+                height: fit-content;
+            }
+        } 
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 961px) and (max-width: 991px){
+    .ny__reps{
+        background-color: #D5D2CB;
+        height: 120vh;
+        border-top: 1px solid $c3;
+        display: flex;
+        flex-direction: column;
+        .nyr__1{
+            width: 80%;
+            margin-top: 5%;
+            padding-left: 3em;
+
+            #nyr__head{
+             
+                display: inline;
+                font-size: 2em;
+                color:$c3;
+                margin-bottom: 1em;
+            }
+            #nyr__subhead{
+                border-left: 2px solid $c3;
+                padding-left: 1em;
+                color:$c3;
+                font-size: 1em;
+            }
+        }
+        .nyr__2{
+            // border: 2px solid red;
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .nyr__3{
+            // border: 3px solid yellowgreen;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color:$c3;
+            margin-top: 1em;
+
+            .ny__reps__btns{
+                display: flex;
+                justify-content: center;
+                
+                .button{
+                    border: 2px solid $c7;
+                    background-color: $c3;
+                    color:$bg;
+                    border-radius: 25px;
+                    height: 5vh;
+                    width: 160px;
+                    margin:.5%;
+                   
+                    &:active{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:focus{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:target {
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                      }
+                }
+
+            }
+            #ny__reps__note{
+                font-size: .7em;
+                background-color: $c3;
+                color: $bg;
+            }
+        }
+        .nyr__4{
+            margin-left: 6%;
+            display: flex;
+            flex-direction: row;
+           
+            .img__map{
+                margin-top: 2em;
+                width: 40%;
+                // height: 80%;
+                height: fit-content;
             }
         } 
         .tooltip__container{
@@ -183,3 +285,184 @@
         }
     }
 }
+
+@media only screen and (min-width: 992px) and (max-width:1199px){
+    .ny__reps{
+        background-color: #D5D2CB;
+        height: 100vh;
+        border-top: 1px solid $c3;
+        display: flex;
+        flex-direction: row;
+
+        .nyr__1{
+            justify-items: center;
+            width: 30%;
+            padding-left: 2em;
+            margin-top: 2em;
+            align-self: center;
+            h2{
+            
+                display: inline;
+                font-size: 3.5em;
+                color:$c3;
+            }
+            #nyr__subhead{
+                font-size: 1em;
+            }
+        }
+        .nyr__2{
+            display:flex;
+            flex-direction: column;
+            // align-items: center;
+            width: 70%;
+
+        }
+        .nyr__3{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            color:$c3;
+            margin-top: 5em;
+            .ny__reps__btns{
+                display: flex;
+                justify-content: center;
+                
+                .button{
+                    border: 2px solid $c7;
+                    background-color: $c3;
+                    color:$bg;
+                    border-radius: 25px;
+                    height: 5vh;
+                    width: 200px;
+                
+                    &:active{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:focus{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:target {
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                }
+
+            }
+            #ny__reps__note{
+                font-size: .7em;
+                // margin-left: -6em;
+                background-color: $c3;
+                color: $bg;
+            }
+        }
+        .nyr__4{
+            // margin-left: 5%;
+            display: flex;
+            flex-direction: row;
+            .img__map{
+                width: 50%;
+                height: fit-content;
+            }
+        } 
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
+        }
+    }
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+    .ny__reps{
+        background-color: #D5D2CB;
+        height: 100vh;
+        border-top: 1px solid $c3;
+        display: flex;
+        flex-direction: row;
+
+        .nyr__1{
+            justify-items: center;
+            width: 30%;
+            padding-left: 2em;
+            margin-top: 2em;
+            align-self: center;
+            h2{
+            
+                display: inline;
+                font-size: 3.5em;
+                color:$c3;
+            }
+            #nyr__subhead{
+                font-size: 1em;
+            }
+        }
+        .nyr__2{
+            display:flex;
+            flex-direction: column;
+            // align-items: center;
+            width: 70%;
+
+        }
+        .nyr__3{
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            color:$c3;
+            margin-top: 5em;
+            .ny__reps__btns{
+                display: flex;
+                justify-content: center;
+                
+                .button{
+                    border: 2px solid $c7;
+                    background-color: $c3;
+                    color:$bg;
+                    border-radius: 25px;
+                    height: 5vh;
+                    width: 200px;
+                
+                    &:active{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:focus{
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                    &:target {
+                        background-color: $bg;
+                        color: $c3;
+                        filter: drop-shadow(0 0 0.45rem crimson);
+                    }
+                }
+
+            }
+            #ny__reps__note{
+                font-size: .7em;
+                // margin-left: -6em;
+                background-color: $c3;
+                color: $bg;
+            }
+        }
+        .nyr__4{
+            // margin-left: 5%;
+            display: flex;
+            flex-direction: row;
+            .img__map{
+                width: 50%;
+                height: fit-content;
+            }
+        } 
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
+        }
+    }
+}
+

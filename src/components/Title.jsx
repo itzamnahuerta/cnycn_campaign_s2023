@@ -8,7 +8,7 @@ export default function Title() {
       <div className='t__wrapper'>
         <img id='nyc_homes_img'  src={nycHomesImg} />
         <h1 id='t1'>
-        See where speculators are flipping homes across New York City.
+        See where speculators are flipping homes across New York City
         </h1>
       </div>
     </section>

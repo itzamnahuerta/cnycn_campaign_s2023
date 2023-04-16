@@ -155,7 +155,7 @@ export default function NYRepresenatives() {
 
         <div className='nyr__1'>
             <h2 id='nyr__head'>How many homes were flipped in your district? </h2> <br/>
-            <h2 id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legistlative </h2>
+            <h2 id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legislative District </h2>
         </div>
 
 
@@ -175,7 +175,7 @@ export default function NYRepresenatives() {
                     Senate Districts 
                 </button>
             </div>
-            <p id="ny__reps__note"> &nbsp; Click or hover for how many homes were flipped for each district&nbsp; </p>
+            <p id="ny__reps__note"> &nbsp; Click or hover over the chart to see the number of flips in each district &nbsp;</p>
             </div>
     
             <div className='tooltip__container'></div>

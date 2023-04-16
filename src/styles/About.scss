@@ -5,18 +5,21 @@
         background-size: cover;
         background-color: #D5D2CB;
         height: 100vh;
+        width: 100vw;
         color: $c3;
         display:grid;
         grid-template-columns:repeat(5, 1fr);
         grid-template-rows:  repeat(4,1fr);
+        overflow: hidden;
+
         #a1{
             position: relative;
             z-index: 5;
             grid-column: 3/5;
             grid-row: 1/2;
-            font-size:calc(100vw / 15);
-            margin-left: -1.5em;
-            margin-top: 2em;
+            font-size:2rem;
+            margin-left: -.5em;
+            margin-top: 1em;
             justify-self: center;
             padding: .5em;
         }
@@ -26,18 +29,21 @@
             grid-column: 3/5;
             grid-row: 2/3;
             justify-self: center;
-            font-size:calc(100vw / 25);
-            // margin: top 5px;em;
+            // font-size:1.2em;
             border-top: .4px solid  $c3;
         }
         #nyc__img{
-            position: relative;
-            z-index: 0;
-            margin: 10em 0 0 1em;
             grid-column: 1/6;
             grid-row: 2/6;
-            background-image: url('../imgs/nyc_outline_1.svg');
-            background-repeat: no-repeat;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            margin: 7em 0 0 0em;
+
+
+           
         }
         #btn__maps{
             width: 200px;
@@ -56,25 +62,28 @@
         color: $c3;
         display:grid;
         grid-template-columns:repeat(5, 1fr);
-        grid-template-rows:  repeat(4,1fr);
+        grid-template-rows:  20% 20% 10% 20% 30% ;
         border-top: 1px solid $c3;
+
 
         #b1{
             grid-column: 2/5;
             grid-row: 2/3;
-            font-size:calc(100vw / 25);
+            font-size:1em;
+            display: inline-block;
+            align-self: flex-end;
         }
         #b2{
             grid-column: 2/5;
-            grid-row:3/5;
-            font-size:calc(100vw / 25);
+            grid-row:4/5;
+            font-size:1em;
         }
         #line__b3{
             border-left: 3px solid $c3;
             grid-column: 2/5;
-            grid-row: 2/3;
-            height: 60%;
-            margin-top: 5em;
+            grid-row: 3/4;
+            height: 80%;
+ 
         }
         #bill{
             a{
@@ -86,6 +95,7 @@
     }
 
     .about__container__3{
+        // border:1px solid yellow;
         background-size: cover;
         background-color: #D5D2CB;
         width: 100vw;
@@ -104,17 +114,20 @@
         }
 
         #c1{
-            grid-column: 1/6;
+            grid-column: 1/7;
             grid-row: 1/2;
-            font-size:1em;
+            font-size:1.3em;
             border-radius: 25px;
             border:4px solid $c3;
-            padding: 0.5em;
-            margin-left: 1em;
+            padding: .5em;
+            // margin-left: 1em;
             text-align: center;
-            // -webkit-text-fill-color: #D5D2CB;
-            // -webkit-text-stroke-width: 2px;
-            // -webkit-text-stroke-color: $c3;
+            background-color: #D5D2CB;
+            color: $c3;
+            width: 70%;
+            justify-self: center;
+
+            
         }
         #c2{
             grid-column: 2/8;
@@ -125,37 +138,43 @@
         #c3{
             grid-column: 2/3;
             grid-row: 2/3;
+            text-align: center;
             #queensImg{
-                width: 40%;
+                width: 60%;
             }
 
         }
         #c4{
             grid-column: 2/3;
             grid-row: 3/4;
+            text-align: center;
             #bkImg{
-                width: 40%;
+    
+                width: 60%;
             }
         }
         #c5{
             grid-column: 2/3;
             grid-row: 4/5;
+            text-align: center;
             #bxImg{
-                width: 40%;
+                width: 60%;
             }
 
         }
         #c6{
             grid-column: 2/3;
             grid-row: 5/6;
+            text-align: center;
 
             #manImg{
-                width: 40%;
+                width: 60%;
             }
         }
         #c7{
             grid-column: 4/6;
             grid-row: 2/3;
+       
             #c7-a{
                 font-size:.8em;
             }
@@ -167,6 +186,7 @@
 
         }
         #c8{
+
             grid-column: 4/5;
             grid-row: 3/4;
             font-size:2em;
@@ -191,38 +211,45 @@
 }
 
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 600px) and (max-width: 960px){
     .about__container__1{
         background-size: cover;
         background-color: #D5D2CB;
         height: 100vh;
+        width: 100vw;
         color: $c3;
         display:grid;
         grid-template-columns:repeat(5, 1fr);
-        grid-template-rows:  repeat(4,1fr);
+        grid-template-rows:  repeat(5,20%);
+        overflow: hidden;
         #a1{
             grid-column: 3/5;
             grid-row: 2/3;
-            font-size:calc(100vw / 35);
-            // margin-left: 1em;
-            margin-top: 2em;
-            justify-self: center;
-            padding: .5em;
+            font-size:2rem;
+            
+            
         }
         #a2{
             grid-column: 3/5;
             grid-row: 3/4;
             justify-self: center;
-            font-size:calc(100vw / 55);
-            margin-top:2em;
+            font-size:1.5rem;
+            margin-left: -1em;
             border-top: .4px solid  $c3;
         }
         #nyc__img{
-            margin-left: 1em;
-            grid-column: 1/3;
-            grid-row: 3/5;
-            background-image: url('../imgs/nyc_outline_1.svg');
-            background-repeat: no-repeat;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            grid-column: 1/6;
+            grid-row: 3/6;
+            position: relative;
+            z-index: 0;
+            margin: 2em 0 0 1em;
+            grid-column: 1/6;
+            grid-row: 3/7;
+        
+
         }
         #btn__maps{
             width: 300px;
@@ -243,25 +270,25 @@
         color: $c3;
         display:grid;
         grid-template-columns:repeat(5, 1fr);
-        grid-template-rows:  repeat(4,1fr);
+        grid-template-rows:  20% 20% 10% 20% 30% ;
         border-top: 1px solid $c3;
 
         #b1{
             grid-column: 2/5;
             grid-row: 2/3;
-            font-size:calc(100vw / 35);
+            font-size:2em;
         }
         #b2{
             grid-column: 2/5;
-            grid-row:3/5;
-            font-size:calc(100vw / 35);
+            grid-row:4/5;
+            font-size:2em;
         }
         #line__b3{
             border-left: 3px solid $c3;
             grid-column: 2/5;
-            grid-row: 2/3;
-            height: 30%;
-            margin-top: 13em;
+            grid-row: 3/4;
+            height: 90%;
+            // margin-top: 13em;
         }
         #bill{
             a{
@@ -272,6 +299,7 @@
     }
 
     .about__container__3{
+        // border:4px solid darkorange;
         background-size: cover;
         background-color: #D5D2CB;
         width: 100vw;
@@ -289,13 +317,15 @@
             -webkit-text-stroke-color: $c3;
         }
         #c1{
-            grid-column: 1/3;
-            grid-row: 1/6;
-            font-size:4em;
+            grid-column: 1/7;
+            grid-row: 1/2;
+            width: 70%;
+            font-size:1.3em;
             border-radius: 25px;
             border:4px solid $c3;
             padding: 0.5em;
             margin-left: 1em;
+            justify-self: center;
             text-align: center;
             // -webkit-text-fill-color: #D5D2CB;
             // -webkit-text-stroke-width: 2px;
@@ -309,9 +339,214 @@
             background-repeat: no-repeat;
         }
         #c3{
+            grid-column: 2/3;
+            grid-row: 2/3;
+            text-align: center;
+
+            // margin-top: 2em;
+            #queensImg{
+                width: 60%;
+            }
+
+        }
+        #c4{
+            grid-column: 2/3;
+            grid-row: 3/4;
+            text-align: center;
+            // margin-top: 1em;
+            #bkImg{
+                width: 60%;
+            }
+        }
+        #c5{
+            grid-column: 2/3;
+            grid-row: 4/5;
+            text-align: center;
+            // margin-top: 1em;
+            #bxImg{
+                width: 60%;
+            }
+
+        }
+        #c6{
+            grid-column: 2/3;
+            grid-row: 5/6;
+            text-align: center;
+            // margin-top: 1em;
+            #manImg{
+                width: 60%;
+            }
+        }
+        #c7{
+            grid-column: 4/6;
+            grid-row: 2/3;
+            // margin-top: 1.4em;
+            #c7-a{
+                font-size:.8em;
+            }
+            #c7-b{
+                color:$c7;
+                font-size:2.4em;
+            }
+
+        }
+        #c8{
             grid-column: 4/5;
-            grid-row: 1/2;
-            margin-top: 2em;
+            grid-row: 3/4;
+            font-size:2.4em;
+
+        }
+        #c9{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            font-size:2.4em;
+        }
+        #c10{
+            grid-column: 4/5;
+            grid-row: 5/6;
+            font-size:2.4em;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 961px) and (max-width: 991px){
+    .about__container__1{
+        // background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        width: 100vw;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(5,20%);
+        overflow: hidden;
+        #a1{
+            grid-column: 3/5;
+            grid-row: 2/3;
+            font-size:2.5rem;
+            display: inline-block;
+            // margin-left: 1em;
+            // margin-top: 2em;
+            justify-self: center;
+            // padding: .5em;
+        }
+        #a2{
+            grid-column: 3/5;
+            grid-row: 3/4;
+            justify-self: center;
+            font-size:1.5rem;
+            margin-top:2em;
+            border-top: .4px solid  $c3;
+        }
+        #nyc__img{
+            object-fit: cover;
+            width: 100%;
+            grid-column: 1/6;
+            grid-row: 3/6;
+            position: relative;
+            z-index: 0;
+            margin: 2em 0 0 1em;
+
+
+        }
+        #btn__maps{
+            width: 300px;
+            height:3em;
+            border-radius: 2em;
+            background-color: $c3;
+            color: $bg;
+            border: none;
+
+
+        }
+
+    }
+    .about__container__2{
+        // border:4px solid red;
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  20% 20% 10% 20% 30% ;
+        border-top: 1px solid $c3;
+
+        #b1{
+            grid-column: 2/5;
+            grid-row: 2/3;
+            font-size:2em;
+            display: inline-block;
+            align-self: flex-end;
+        }
+        #b2{
+            grid-column: 2/5;
+            grid-row:4/5;
+            font-size:2em;
+        }
+        #line__b3{
+            border-left: 3px solid $c3;
+            grid-column: 2/5;
+            grid-row: 3/4;
+            height: 80%;
+
+        }
+        #bill{
+            a{
+                color:$c7;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .about__container__3{
+        // border: 3px solid fuchsia;
+        background-size: cover;
+        background-color: #D5D2CB;
+        width: 100vw;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-rows:  10% 15%  15%  15%  15%  15% 10% ;
+        border-top: 1px solid $c3;
+
+        #flips_total{
+            font-size: 2em;
+            -webkit-text-fill-color: $c7; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: $c3;
+        }
+        #c1{
+            grid-column: 1/3;
+            grid-row: 1/8;
+            font-size:2.4em;
+            border-radius: 25px;
+            border:4px solid $c3;
+            padding: 0.9em;
+            margin-left: 1em;
+            text-align: center;
+            align-self: center;
+            height: 60%;
+            
+            // -webkit-text-fill-color: #D5D2CB;
+            // -webkit-text-stroke-width: 2px;
+            // -webkit-text-stroke-color: $c3;
+
+        }
+        #c2{
+            grid-column: 2/8;
+            grid-row: 3/7;
+            background-image: url('../imgs/year_borough_chart.svg');
+            background-repeat: no-repeat;
+        }
+        #c3{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            text-align: center;
+            // align-self: flex-end;
+            // margin-top: 2em;
             #queensImg{
                 width: 40%;
             }
@@ -319,16 +554,18 @@
         }
         #c4{
             grid-column: 4/5;
-            grid-row: 2/3;
+            grid-row: 3/4;
             margin-top: 1em;
+            text-align: center;
             #bkImg{
                 width: 40%;
             }
         }
         #c5{
             grid-column: 4/5;
-            grid-row: 3/4;
+            grid-row: 4/5;
             margin-top: 1em;
+            text-align: center;
             #bxImg{
                 width: 40%;
             }
@@ -336,18 +573,233 @@
         }
         #c6{
             grid-column: 4/5;
-            grid-row: 4/5;
+            grid-row: 5/6;
             margin-top: 1em;
+            text-align: center;
             #manImg{
                 width: 40%;
             }
         }
         #c7{
-            grid-column: 5/6;
-            grid-row: 1/2;
-            margin-top: 1.4em;
+            grid-column: 5/7;
+            grid-row: 2/3;
+            justify-self: flex-end;
+            // margin-top: 1.4em;
             #c7-a{
-                // margin-top: 3em;
+                font-size:1em;
+                // margin-top: -1em;
+            }
+            #c7-b{
+                color:$c7;
+                font-size:3em;
+                 margin-top: -.2em;
+            }
+
+        }
+        #c8{
+            grid-column: 5/6;
+            grid-row: 3/4;
+            font-size:3em;
+
+        }
+        #c9{
+            grid-column: 5/6;
+            grid-row: 4/5;
+            font-size:3em;
+        }
+        #c10{
+            grid-column: 5/6;
+            grid-row: 5/6;
+            font-size:3em;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199px){
+    .about__container__1{
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        width: 100vw;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(5,20%);
+        overflow: hidden;
+        #a1{
+            grid-column: 3/5;
+            grid-row: 1/2;
+            font-size:3rem;
+            display: inline-block;
+            margin-top: 2em;
+            justify-self: center;
+        }
+        #a2{
+            grid-column: 3/5;
+            grid-row: 3/4;
+            justify-self: center;
+            font-size:1.5rem;
+            margin-top:2em;
+            border-top: .4px solid  $c3;
+        }
+        #nyc__img{
+        
+            grid-column: 1/3;
+            grid-row: 4/6;
+
+            object-fit: cover;
+            width: 100%;
+
+            position: relative;
+            z-index: 0;
+            margin: 4em 0 0 1em;
+        
+
+        }
+        #btn__maps{
+            width: 300px;
+            height:3em;
+            border-radius: 2em;
+            background-color: $c3;
+            color: $bg;
+            border: none;
+
+
+        }
+
+    }
+
+    .about__container__2{
+       
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+         grid-template-rows:  20% 20% 10% 20% 30% ;
+        border-top: 1px solid $c3;
+
+        #b1{
+            grid-column: 2/5;
+            grid-row: 2/3;
+            font-size:2em;
+            display: inline-block;
+            align-self: flex-end;
+        }
+        #b2{
+            grid-column: 2/5;
+            grid-row:4/5;
+            font-size:2em;
+        }
+        #line__b3{
+            border-left: 3px solid $c3;
+            grid-column: 2/5;
+            grid-row: 3/4;
+            height: 80%;
+
+        }
+        #bill{
+            a{
+                color:$c7;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .about__container__3{
+        // border: 4px solid salmon;
+        background-size: cover;
+        background-color: #D5D2CB;
+        width: 100vw;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-rows:  10% 15%  15%  15%  15%  15% 10% ;
+        border-top: 1px solid $c3;
+
+        #flips_total{
+            font-size: 2em;
+            -webkit-text-fill-color: $c7; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: $c3;
+        }
+        #c1{
+            grid-column: 1/3;
+            grid-row: 1/7;
+            font-size:3.2em;
+            border-radius: 25px;
+            border:4px solid $c3;
+            padding: 0.5em;
+            margin-left: 1em;
+            text-align: center;
+            align-self: center;
+            // -webkit-text-fill-color: #D5D2CB;
+            // -webkit-text-stroke-width: 2px;
+            // -webkit-text-stroke-color: $c3;
+
+        }
+        #c2{
+            grid-column: 2/8;
+            grid-row: 3/7;
+            background-image: url('../imgs/year_borough_chart.svg');
+            background-repeat: no-repeat;
+            
+        }
+        #c3{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            text-align: center;
+            align-self: center;
+            margin-top: -2em;
+            #queensImg{
+                width: 60%;
+            }
+
+        }
+        #c4{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            margin-top: 2em;
+            text-align: center;
+            align-self: center;
+            #bkImg{
+                width: 60%;
+            }
+        }
+        #c5{
+            grid-column: 4/5;
+            grid-row: 4/6;
+            margin-top: 1em;
+            text-align: center;
+            align-self: center;
+            #bxImg{
+                width: 60%;
+            }
+
+        }
+        #c6{
+            grid-column: 4/5;
+            grid-row: 6/7;
+            margin-top: 4em;
+            text-align: center;
+            align-self: center;
+            #manImg{
+                width: 50%;
+            }
+        }
+        #c7{
+            grid-column: 5/7;
+            grid-row: 2/3;
+            margin-top: -1em;
+            padding-right: 2em;
+            justify-self: flex-end;
+            display: inline-block;
+            #c7-a{
+    
+                font-size:1.2em;
+                margin-top: -1em;
             }
             #c7-b{
                 color:$c7;
@@ -357,19 +809,220 @@
         }
         #c8{
             grid-column: 5/6;
+            grid-row: 3/4;
+            font-size:3em;
+            margin-top: 1em;
+
+        }
+        #c9{
+            grid-column: 5/6;
+            grid-row: 5/6;
+            font-size:3em;
+            margin-top: 0em;
+        }
+        #c10{
+            grid-column: 5/6;
+            grid-row: 6/7;
+            font-size:3em;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .about__container__1{
+        // border: 4px solid forestgreen;
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        width: 100vw;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  repeat(5,20%);
+        overflow: hidden;
+        #a1{
+            grid-column: 3/5;
+            grid-row: 1/2;
+            font-size:3rem;
+            display: inline-block;
+            // margin-left: 1em;
+            // margin-top: 2em;
+            justify-self: center;
+            // padding: .5em;
+        }
+        #a2{
+            grid-column: 3/5;
+            grid-row: 3/4;
+            justify-self: center;
+            font-size:1.5rem;
+            margin-top:2em;
+            border-top: .4px solid  $c3;
+        }
+        #nyc__img{
+            object-fit: cover;
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            margin: 1em 0 0 1em;
+            grid-column: 1/3;
+            grid-row: 4/6;
+        
+
+        }
+        #btn__maps{
+            width: 300px;
+            height:3em;
+            border-radius: 2em;
+            background-color: $c3;
+            color: $bg;
+            border: none;
+
+
+        }
+
+    }
+    .about__container__2{
+        background-size: cover;
+        background-color: #D5D2CB;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(5, 1fr);
+        grid-template-rows:  20% 20% 10% 20% 30% ;
+        border-top: 1px solid $c3;
+
+        #b1{
+            grid-column: 2/5;
             grid-row: 2/3;
+            font-size:2.5em;
+        }
+        #b2{
+            grid-column: 2/5;
+            grid-row:4/5;
+            font-size:2.5em;
+        }
+        #line__b3{
+            border-left: 3px solid $c3;
+            grid-column: 2/5;
+            grid-row: 3/4;
+            height: 100%;
+
+        }
+        #bill{
+            a{
+                color:$c7;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .about__container__3{
+        // border: 3px solid forestgreen;
+        background-size: cover;
+        background-color: #D5D2CB;
+        width: 100vw;
+        height: 100vh;
+        color: $c3;
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-rows:  10% 15%  15%  15%  15%  15% 10% ;
+        border-top: 1px solid $c3;
+
+        #flips_total{
+            font-size: 2em;
+            -webkit-text-fill-color: $c7; /* Will override color (regardless of order) */
+            -webkit-text-stroke-width: 0px;
+            -webkit-text-stroke-color: $c3;
+        }
+        #c1{
+            grid-column: 1/3;
+            grid-row: 1/8;
+            font-size:3.4em;
+            border-radius: 25px;
+            border:4px solid $c3;
+            padding: 0.5em;
+            margin-left: 1em;
+            text-align: center;
+            // -webkit-text-fill-color: #D5D2CB;
+            // -webkit-text-stroke-width: 2px;
+            // -webkit-text-stroke-color: $c3;
+
+        }
+        #c3{
+            grid-column: 4/5;
+            grid-row: 2/3;
+            margin-top: -3em;
+            text-align: center;
+            align-self: center;
+            
+            #queensImg{
+                width: 50%;
+            }
+
+        }
+        #c4{
+            grid-column: 4/5;
+            grid-row: 3/4;
+            margin-top: 1em;
+            text-align: center;
+            align-self: center;
+            #bkImg{
+                width: 50%;
+            }
+        }
+        #c5{
+            grid-column: 4/5;
+            grid-row: 4/5;
+            margin-top: 1em;
+            text-align: center;
+            align-self: center;
+            #bxImg{
+                width: 40%;
+            }
+
+        }
+        #c6{
+            grid-column: 4/5;
+            grid-row: 5/6;
+            margin-top: 5em;
+            text-align: center;
+            align-self: center;
+            #manImg{
+                width: 40%;
+            }
+        }
+        #c7{
+            grid-column: 5/7;
+            grid-row: 1/2;
+            margin-top: 1.4em;
+            
+            #c7-a{
+                margin-top: 1.5em;
+                font-size: 1em;
+                padding-right: 9em;
+            }
+            #c7-b{
+                color:$c7;
+                font-size:3em;
+            }
+
+        }
+        #c8{
+            grid-column: 5/6;
+            grid-row: 3/4;
             font-size:3em;
 
         }
         #c9{
             grid-column: 5/6;
-            grid-row: 3/4;
+            grid-row: 4/5;
             font-size:3em;
         }
         #c10{
             grid-column: 5/6;
-            grid-row: 4/5;
+            grid-row: 5/6;
             font-size:3em;
         }
     }
+
 }

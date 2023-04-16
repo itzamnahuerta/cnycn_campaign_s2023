@@ -21,7 +21,7 @@ export default function About() {
       </div>
 
       <div id='a2'>
-        <h1> Predatory house-flipping is when a professional investor buys a home and resells it for a quick profit. Driving up housing costs citywide and especially in low-income communities of color</h1>
+        <h1> Predatory house-flipping is when a professional investor buys a home and resells it for a quick profit, driving up housing costs citywide and especially in low-income communities of color.</h1>
         <button id='btn__maps'> Jump to District Maps </button>
       </div>
 
@@ -39,7 +39,7 @@ export default function About() {
     <section className='about__container__3'>
 
         <h1 id='c1'> There were a total of <br/>
-        <span id='flips_total'> 14,016</span> <br/> homes flipped in NYC  <br/> between  <br/>2017 - 2021 
+        <span id='flips_total'> 14,016</span> <br/> homes flipped in New York City between 2017 - 2021 
         </h1>
 
 
@@ -49,7 +49,7 @@ export default function About() {
         </div>
 
         <div id='c7'>
-        <h1 id='c7-a'> Total percentage of homes flipped by borough 2017 - 2021 </h1>
+        <h1 id='c7-a'> Percentage of total homes flipped citywide, by borough </h1>
         <h1 id='c7-b'> 47% </h1>
         </div>
 
