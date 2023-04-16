@@ -29,11 +29,11 @@ export default function About() {
     </section>
 
     <section className='about__container__2'>
-        <h1 id='b1'>To combat this speculation and keep homes affordable,</h1>
-
-        <div id='line__b3'></div>
-
-        <h1 id='b2'>the <span id='bill'> <a href='https://www.nysenate.gov/legislation/bills/2023/s1569'  target="_blank">Protect Our Homes and Communities, Stop Predatory Housing Speculation Act of 2023 (S1569/A1023)</a></span> would tax the profits on properties resold by professional investors within two years of purchase. </h1>
+        <h1 id='b1'>To combat this speculation and keep homes affordable, the <a href='https://www.nysenate.gov/legislation/bills/2023/s1569'  target="_blank">Protect Our Homes and Communities, Stop Predatory Housing Speculation Act of 2023 
+        <span id='bill'>
+        (S1569/A1023) 
+        </span></a> 
+        would tax the profits on properties resold by professional investors within two years of purchase. </h1>
     </section>
 
     <section className='about__container__3'>
