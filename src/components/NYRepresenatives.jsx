@@ -21,9 +21,9 @@ export default function NYRepresenatives() {
 
 
     // Chart Dimensions
-    const margin = {top: 20, right: 50, bottom: 40, left: 30};
-    const width = 320 - margin.left - margin.right;
-    const height = 600;
+    const margin = {top: 5, right: 50, bottom: 5, left: 30};
+    const width = 300 - margin.left - margin.right;
+    const height = 490 - margin.top - margin.bottom;
 
 
     useEffect(() => {
@@ -63,7 +63,7 @@ export default function NYRepresenatives() {
         const positionScale = d3.scaleBand()
         .range([0, height])
         .domain(sortedData.map(d =>  d.memberName))
-        .padding(0.3);
+        .padding(0.1);
         
         // Tooltip Container
         const tooltip = d3.select(".tooltip__container")
@@ -100,8 +100,8 @@ export default function NYRepresenatives() {
             .attr('x', function(d) {return widthScale(d) })
             .attr('y', function(d) {return positionScale(d.memberName) * 3 + 10 })
             .attr('fill','blue')
-            .style("font-size", "11px")
-            .attr("dy", ".35em")
+            .style("font-size", "10px")
+            .attr("dy", ".5em")
             .attr('class', 'mem__info')
             .text(function (d) {return  d.districtName + ' - ' + d.memberName});
 
@@ -119,6 +119,7 @@ export default function NYRepresenatives() {
             .transition()
             .duration(1600)
             .attr('width', d => widthScale(d.homesFlipped))
+
         d3.selectAll('rect')
             .on('mouseover', (e,d) => {
                 d3.select(e.target).transition().attr('fill','rgba(205, 209, 228)')
@@ -154,7 +155,7 @@ export default function NYRepresenatives() {
     <section className="ny__reps">
 
         <div className='nyr__1'>
-            <h2 id='nyr__head'>How many homes were flipped in your district? </h2> <br/>
+            <h2 id='nyr__head'>How many homes were flipped in your district? </h2> <br/><br/>
             <h2 id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legislative District </h2>
         </div>
 

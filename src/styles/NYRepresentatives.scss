@@ -289,25 +289,26 @@
 @media only screen and (min-width: 992px) and (max-width:1199px){
     .ny__reps{
         background-color: #D5D2CB;
-        height: 100vh;
+        height: 110vh;
         border-top: 1px solid $c3;
         display: flex;
         flex-direction: row;
 
         .nyr__1{
             justify-items: center;
-            width: 30%;
+            width: 20%;
             padding-left: 2em;
-            margin-top: 2em;
             align-self: center;
+            margin-bottom: 1em;
             h2{
             
                 display: inline;
-                font-size: 3.5em;
+                font-size: 2.2em;
                 color:$c3;
+
             }
             #nyr__subhead{
-                font-size: 1em;
+                font-size: 1.3em;
             }
         }
         .nyr__2{
@@ -322,7 +323,7 @@
             flex-direction: column;
             align-items: center; 
             color:$c3;
-            margin-top: 5em;
+            margin-top: 3em;
             .ny__reps__btns{
                 display: flex;
                 justify-content: center;
@@ -351,11 +352,9 @@
                         filter: drop-shadow(0 0 0.45rem crimson);
                     }
                 }
-
             }
             #ny__reps__note{
                 font-size: .7em;
-                // margin-left: -6em;
                 background-color: $c3;
                 color: $bg;
             }
@@ -365,7 +364,7 @@
             display: flex;
             flex-direction: row;
             .img__map{
-                width: 50%;
+                width: 40%;
                 height: fit-content;
             }
         } 
@@ -380,7 +379,7 @@
 @media only screen and (min-width: 1200px) {
     .ny__reps{
         background-color: #D5D2CB;
-        height: 100vh;
+        height: 115vh;
         border-top: 1px solid $c3;
         display: flex;
         flex-direction: row;
