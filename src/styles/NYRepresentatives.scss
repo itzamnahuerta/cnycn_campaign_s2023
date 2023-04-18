@@ -1,6 +1,6 @@
 @import 'Theme';
 
-@media only screen and (max-width:600px){
+@media screen and (min-width: 300px){
     .ny__reps{
         background-color: #D5D2CB;
         height: auto;
@@ -50,7 +50,7 @@
                     color:$bg;
                     border-radius: 25px;
                     height: 5vh;
-                    width: 160px;
+                    width: 140px;
                     margin-left: 2%;
                 
                     &:active{
@@ -85,8 +85,8 @@
 
             .img__map{
                 align-self: center;
-                max-width: 40%;
-                // height: fit-content;
+                max-width: 70%;
+                height: auto;
             }
         } 
         .tooltip__container{
@@ -96,8 +96,7 @@
 
 }
 
-
-@media only screen and (min-width: 600px)and (max-width:960px) {
+@media screen and (min-width: 768px)  { 
     .ny__reps{
         background-color: #D5D2CB;
         height: auto;
@@ -194,9 +193,10 @@
     }
 }
 
-@media only screen and (min-width: 961px) and (max-width: 991px){
+@media screen and (min-width:992px) {
     .ny__reps{
         background-color: #D5D2CB;
+        // background-color: yellow;
         height: 115vh;
         border-top: 1px solid $c3;
         display: flex;
@@ -234,7 +234,7 @@
             flex-direction: column;
             align-items: center; 
             color:$c3;
-            margin-top: 5em;
+            margin-top: 2em;
             .ny__reps__btns{
                 display: flex;
                 justify-content: center;
@@ -289,9 +289,10 @@
     }
 }
 
-@media only screen and (min-width: 992px) and (max-width:1199px){
+@media screen and (min-width: 1200px) {
     .ny__reps{
-        background-color: #D5D2CB;
+        // background-color: #D5D2CB;
+        // background-color: yellow;
         height: 115vh;
         border-top: 1px solid $c3;
         display: flex;
@@ -329,7 +330,7 @@
             flex-direction: column;
             align-items: center; 
             color:$c3;
-            margin-top: 5em;
+            margin-top: 3em;
             .ny__reps__btns{
                 display: flex;
                 justify-content: center;
@@ -384,100 +385,3 @@
     }
 
 }
-
-
-@media only screen and (min-width: 1200px) {
-    .ny__reps{
-        background-color: #D5D2CB;
-        height: 115vh;
-        border-top: 1px solid $c3;
-        display: flex;
-        flex-direction: row;
-
-        .nyr__1{
-            // justify-items: center;
-            width: 30%;
-            padding-left: 2em;
-            margin-top: 2em;
-            // align-self: center;
-            h1{
-                display: inline;
-                font-size: 55px;
-                color:$c3;
-            }
-
-            #nyr__subhead{
-                font-size: 20px;
-                text-decoration: none;
-                color:$c3;
-                border-bottom: 3px solid $c7;
-                line-height: 2em;
-            }
-        }
-        .nyr__2{
-            display:flex;
-            flex-direction: column;
-            width: 70%;
-            margin-right: 2em;
-
-        }
-        .nyr__3{
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            color:$c3;
-            margin-top: 5em;
-            .ny__reps__btns{
-                display: flex;
-                justify-content: center;
-                
-                .button{
-                    border: 2px solid $c7;
-                    background-color: $c3;
-                    color:$bg;
-                    border-radius: 25px;
-                    height: 5vh;
-                    width: 200px;
-                    margin-left: 5%;
-                
-                    &:active{
-                        background-color: $bg;
-                        color: $c3;
-                        filter: drop-shadow(0 0 0.45rem crimson);
-                    }
-                    &:focus{
-                        background-color: $bg;
-                        color: $c3;
-                        filter: drop-shadow(0 0 0.45rem crimson);
-                    }
-                    &:target {
-                        background-color: $bg;
-                        color: $c3;
-                        filter: drop-shadow(0 0 0.45rem crimson);
-                    }
-                }
-
-            }
-            #ny__reps__note{
-                font-size: .7em;
-                // margin-left: -6em;
-                background-color: $c3;
-                color: $bg;
-            }
-        }
-        .nyr__4{
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            .img__map{
-                max-width: 45%;
-                height: fit-content;
-                // object-fit: fill;
-            }
-        } 
-        .tooltip__container{
-            font-family:  Helvetica, sans-serif;
-        }
-    }
-}
-
