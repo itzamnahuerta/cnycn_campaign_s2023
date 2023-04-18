@@ -23,7 +23,7 @@ export default function NYRepresenatives() {
     // Chart Dimensions
     const margin = {top: 5, right: 50, bottom: 5, left: 30};
     const width = 300 - margin.left - margin.right;
-    const height = 820 - margin.top - margin.bottom;
+    const height = 600 - margin.top - margin.bottom;
 
 
     useEffect(() => {

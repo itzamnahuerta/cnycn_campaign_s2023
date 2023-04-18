@@ -1,6 +1,6 @@
 @import './Theme.scss';
 
-@media only screen and (max-width:600px){
+@media screen and (min-width: 300px){
     .title__container{
         height:100vh;
         display: flex;
@@ -18,7 +18,7 @@
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 960px){
+@media screen and (min-width: 768px){
     .title__container {
         background-color: $c3;
         // background-color: bisque;
@@ -41,7 +41,7 @@
 }
 
 
-@media only screen and (min-width: 960px){
+@media screen and (min-width:992px) {
 .title__container {
     background-color: $c3;
     height:100vh;
@@ -61,27 +61,6 @@
 }
 }
 
-@media only screen and (min-width: 992px){
-    .title__container {
-        background-color: $c3;
-
-        height:100vh;
-        display: flex;
-        flex-direction: column;
-        // color: $bg;
-        color: 'red';
-        align-items: center;
-        justify-content: center;
-        .t__wrapper{
-            margin-top:4em;
-            width: 70%;
-            h1{
-                font-size: 3em;
-                text-align: center;
-            }
-        }
-    }
-}
 
 @media only screen and (min-width: 1200px){
     .title__container {
