@@ -36,8 +36,8 @@ export default function About() {
     <section className='about__container__3'>
       <div className='a_c_3_wrapper'>
 
-        <h1 id='c1'> There were a total of <br/>
-          <span id='flips_total'> 14,016</span> <br/> homes flipped in New York City between 2017 - 2021 
+        <h1 id='c1'> There were a total of
+          <span id='flips_total'> 14,016</span> homes flipped in New York City between 2017 - 2021 
         </h1>
 
   

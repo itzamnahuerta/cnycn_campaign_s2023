@@ -23,7 +23,7 @@ export default function NYRepresenatives() {
     // Chart Dimensions
     const margin = {top: 5, right: 50, bottom: 5, left: 30};
     const width = 300 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const height = 820 - margin.top - margin.bottom;
 
 
     useEffect(() => {
@@ -182,11 +182,11 @@ export default function NYRepresenatives() {
             <div className='tooltip__container'></div>
 
             <div className='nyr__4'>
-            <svg className='vis__area' ref={d3Container}></svg>
-           
-            {barViz == 'assembly' ? 
-                <img src={assemblyImg} className='img__map' />  : 
-                <img src={senateImg} className='img__map' /> }
+                <svg className='vis__area' ref={d3Container}></svg>
+            
+                {barViz == 'assembly' ? 
+                    <img src={assemblyImg} className='img__map' />  : 
+                    <img src={senateImg} className='img__map' /> }
              </div>
         </div>
 
