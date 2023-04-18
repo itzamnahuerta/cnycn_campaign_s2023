@@ -12,15 +12,14 @@
             width: 90%;
             padding-left: 1em;
             margin-top: 1em;
-            // align-self: center;
             h1{
                 display: inline;
-                font-size: 35px;
+                font-size:2.5em;
                 color:$c3;
             }
 
             #nyr__subhead{
-                font-size: 18px;
+                font-size: 1.4em;
                 text-decoration: none;
                 color:$c3;
                 border-bottom: 3px solid $c7;
@@ -98,26 +97,27 @@
 
 @media screen and (min-width: 768px)  { 
     .ny__reps{
+        border-top: 1px solid $c3;
         background-color: #D5D2CB;
         height: auto;
-        border-top: 1px solid $c3;
         display: flex;
         flex-direction: column;
 
         .nyr__1{
-            // justify-items: center;
+            // background-color: bisque;
+            justify-items: center;
             width: 90%;
             padding-left: 1.5em;
             margin-top: 2em;
-            // align-self: center;
+            align-self: center;
+
             h1{
                 display: inline;
                 font-size: 55px;
                 color:$c3;
             }
-
             #nyr__subhead{
-                font-size: 20px;
+                font-size: 2em;
                 text-decoration: none;
                 color:$c3;
                 border-bottom: 3px solid $c7;
@@ -125,10 +125,11 @@
             }
         }
         .nyr__2{
+            // background-color: bisque;
             display:flex;
             flex-direction: column;
             width: 100%;
-            margin-right: 1em;
+            margin: 0;
 
         }
         .nyr__3{
@@ -136,7 +137,6 @@
             flex-direction: column;
             align-items: center; 
             color:$c3;
-            margin-top: 5em;
             .ny__reps__btns{
                 display: flex;
                 justify-content: center;
@@ -170,7 +170,6 @@
             }
             #ny__reps__note{
                 font-size: .7em;
-                // margin-left: -6em;
                 background-color: $c3;
                 color: $bg;
             }
@@ -183,7 +182,6 @@
             .img__map{
                 max-width: 45%;
                 height: fit-content;
-                // object-fit: fill;
             }
             
         } 
@@ -196,21 +194,19 @@
 @media screen and (min-width:992px) {
     .ny__reps{
         background-color: #D5D2CB;
-        // background-color: yellow;
-        height: 115vh;
+        height: auto;
         border-top: 1px solid $c3;
         display: flex;
         flex-direction: row;
 
         .nyr__1{
-            // justify-items: center;
             width: 30%;
             padding-left: 2em;
-            margin-top: 2em;
-            // align-self: center;
+            align-items: flex-start;
+            align-self: flex-start;
             h1{
                 display: inline;
-                font-size: 55px;
+                font-size: 3em;
                 color:$c3;
             }
 
