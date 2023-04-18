@@ -155,8 +155,8 @@ export default function NYRepresenatives() {
     <section className="ny__reps">
 
         <div className='nyr__1'>
-            <h2 id='nyr__head'>How many homes were flipped in your district? </h2> <br/><br/>
-            <h2 id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legislative District </h2>
+            <h1 id='nyr__head'>How many homes were flipped in your district? </h1> <br/><br/>
+            <span id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legislative District </span>
         </div>
 
 

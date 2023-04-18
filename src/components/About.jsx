@@ -29,48 +29,49 @@ export default function About() {
     </section>
 
     <section className='about__container__2'>
-        <h1 id='b1'>To combat this speculation and keep homes affordable, the <a href='https://www.nysenate.gov/legislation/bills/2023/s1569'  target="_blank">Protect Our Homes and Communities, Stop Predatory Housing Speculation Act of 2023 
-        <span id='bill'>
-        (S1569/A1023) 
-        </span></a> 
+        <h1 id='b1'>To combat this speculation and keep homes affordable, the <a href='https://www.nysenate.gov/legislation/bills/2023/s1569'  target="_blank">Protect Our Homes and Communities, Stop Predatory Housing Speculation Act of 2023 <span id='bill'>(S1569/A1023)</span></a>&nbsp; 
         would tax the profits on properties resold by professional investors within two years of purchase. </h1>
     </section>
 
     <section className='about__container__3'>
+      <div className='a_c_3_wrapper'>
 
         <h1 id='c1'> There were a total of <br/>
-        <span id='flips_total'> 14,016</span> <br/> homes flipped in New York City between 2017 - 2021 
+          <span id='flips_total'> 14,016</span> <br/> homes flipped in New York City between 2017 - 2021 
         </h1>
 
-
-        <div id='c3'>
-        <h1>Queens</h1>
-        <img id='queensImg' src={queens}/>
+  
+        <h1 className='c3__title'> Percentage of total homes flipped citywide, by borough </h1>
+        
+        <div className='c3__child' id='c2'>
+          <h1>Queens</h1>
+          <img id='queensImg' src={queens}/>
         </div>
 
-        <div id='c7'>
-        <h1 id='c7-a'> Percentage of total homes flipped citywide, by borough </h1>
-        <h1 id='c7-b'> 47% </h1>
-        </div>
-
-
-        <div id='c4'>
+        <div className='c3__child' id='c3'>
           <h1> Brooklyn</h1>
           <img  id='bkImg' src={brooklyn}/>
         </div>
-        <h1 id='c8'> 29% </h1>
 
-        <div id='c5'>
+        <div className='c3__child' id='c4'>
           <h1>Bronx</h1>
           <img  id='bxImg' src={bronx}/>
         </div>
-        <h1 id='c9'> 17% </h1>
 
-        <div id='c6'>
+        <div className='c3__child' id='c5'>
           <h1>Manhattan</h1>
           <img  id='manImg' src={manhattan}/>
         </div>
-        <h1 id='c10'> 6% </h1>
+
+
+        <h1 className='c3__child__num' id='c6'> 47% </h1>
+
+        <h1 className='c3__child__num' id='c7'> 29% </h1>
+
+        <h1 className='c3__child__num' id='c8'> 17% </h1>
+
+        <h1 className='c3__child__num' id='c9'> 6% </h1>
+      </div>
     </section>
 
     </React.Fragment>
