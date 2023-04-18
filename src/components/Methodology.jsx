@@ -19,18 +19,23 @@ export default function Credits() {
         </div>
 
 
+      <div className='m3__wrapper'>
+        <div className='m3'>
+          <h3 id="notes__title"> Notes</h3>
 
-      <div className='m3'>
-        <h3 id="notes__title"> Notes</h3>
-
-        <p className="m3__child">Data for Staten Island is not contained in ACRIS and as such is not included here.<br/> <br/>For homes purchased in 2021, this data does not include all homes flipped within two years, given that this analysis was conducted before the end of 2023.</p>
+          <p className="m3__child">Data for Staten Island is not contained in ACRIS and as such is not included here.<br/> <br/>For homes purchased in 2021, this data does not include all homes flipped within two years, given that this analysis was conducted before the end of 2023.</p>
+        </div>
       </div>
 
-      <div className='m4'>
-        <p> Analysis and visualizations prepared in March 2023 by Pratt Center and Center for NYC Neighborhoods </p>
-        <img id='prattlogo' src={prattLogo} />
-        <img id='cnyclogo' src={cnycn} />  
+      <div className='m4__wrapper'>
+        <div className='m4'>
+          <p> Analysis and visualizations prepared in March 2023 by Pratt Center and Center for NYC Neighborhoods </p>
+          <img id='prattlogo' src={prattLogo} />
+          <img id='cnyclogo' src={cnycn} />  
+        </div>
       </div>
+
+
 
     </section>
   )

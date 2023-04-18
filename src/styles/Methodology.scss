@@ -7,9 +7,8 @@
         border-top: 1px solid $c3;
         color: $c3;
 
-        display:grid;
-        grid-template-columns: repeat(7,1fr);
-        grid-template-rows: 10% 10% 10% 10% 10% 15% 15%;
+        display:flex;
+        flex-direction: column;
 
         #prattlogo{
             width: 15%;
@@ -18,60 +17,56 @@
             width:50%
         }
 
-
         .m1{
-            grid-column: 1/7;
-            grid-row: 1/2;
-            // margin-right: 1em;
-        }
-        .m1__child{
-            margin-left: 1em;
-            h1{
-                overflow: hidden;
-            }
-            span{
-                font-size: 18pt;
-            }
-            span:after{
-                content: "";
-                display: inline-block;
-                height: 0.5em;
-                vertical-align: bottom;
-                width: 60%;
-                margin-right: -100%;
-                margin-left: 10px;
-                border-top: 2px solid $c3;
-
+            padding:1em;
+            .m1__child{
+                
+                h1{
+                    overflow: hidden;
+                }
+                span{
+                    font-size: 18pt;
+                }
+                span:after{
+                    content: "";
+                    display: inline-block;
+                    height: 0.5em;
+                    vertical-align: bottom;
+                    width: 60%  ;
+                    margin-right: -100%;
+                    margin-left: 10px;
+                    border-top: 2px solid $c3;
+    
+                }
             }
         }
 
         .m2{
-            grid-column: 1/7;
-            grid-row: 2/4;
-            padding: .7em;
-            margin-left: 1em;
-            margin-top: .3em;
             text-align: center;
-
-
+            padding: 1em;
+            display: flex;
+            justify-content: center;
             p{
-                font-size: .9em;
+                width: 70%;
+                font-size: 1em;
                 font-family: Helvetica, sans-serif;
                 line-height: 1.4em;
              }
         }
 
+
+        .m3__wrapper{
+            display: flex;
+            justify-content: center;
+            
+        }
         .m3{
-            grid-column: 1/7;
-            grid-row: 5/7;
             border: 1px solid $c3;
-            margin-left: 1em;
-            margin-top: 1em;
-            height: 75%;
             border-radius: 25px;
-            padding:1em;
+            padding: 1em;
             background-color: $c3;
-            color:$bg;
+            color: $bg;
+            width: 65%;
             #notes__title{
                 font-size: 1em;
                 display: inline;
@@ -79,36 +74,32 @@
                 padding-bottom: 2px;
                 color: $c7;
             }
-            
             .m3__child{
                 display: inline-block;
-                font-size: .6em;
+                font-size: .7em;
                 font-family: Helvetica, sans-serif;
-                // margin-top: 6%;
-                line-height: 1.4em;
-                
-                
+                line-height: 1.6em;
             }
         }
-        .m4{
-            grid-column: 2/6;
-            grid-row: 7/9;
-            height: fit-content;
-            text-align: center;
-            margin-top: 1em;
 
-            p{
-                font-size: .9em;
-                font-family: Helvetica, sans-serif;
-                // border-left: 2px solid $c3;
-                padding-left: .5em;
+        .m4__wrapper{
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2em;
+            .m4{
+                width: 50%;
+                margin-top: 1em;
+    
+                p{
+                    font-size: .9em;
+                    font-family: Helvetica, sans-serif;
+                    padding-left: .5em;
+                }
+                img{
+                    margin-left: 1em;
+                    color: $c3;
+                }
             }
-            img{
-                margin-left: 1em;
-                color: $c3;
-
-            }
-
         }
 
     }
@@ -350,8 +341,7 @@
 
 @media screen and (min-width: 1200px) {
     .method__container{
-        // border:2px solid red;
-        height: 120vh;
+        height: auto;
         background-color: $bg;
         border-top: 1px solid $c3;
         color: $c3;
@@ -370,7 +360,6 @@
         .m1{
             grid-column: 2/7;
             grid-row: 1/2;
-            // margin-right: 1em;
         }
         .m1__child{
             margin-left: 1em;
@@ -419,7 +408,6 @@
             margin-top: 1em;
             height: 80%;
             border-radius: 25px;
-            // border: 4px solid $c7;
             padding:1em;
             background-color: $c3;
             color:$bg;
