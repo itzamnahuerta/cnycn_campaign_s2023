@@ -21,9 +21,9 @@ export default function NYRepresenatives() {
 
 
     // Chart Dimensions
-    const margin = {top: 5, right: 50, bottom: 5, left: 30};
-    const width = 300 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const margin = {top: 10, right: 90, bottom: 10, left: 100};
+    const width = 420 - margin.left - margin.right;
+    const height = 800 - margin.top - margin.bottom;
 
 
     useEffect(() => {
@@ -34,10 +34,12 @@ export default function NYRepresenatives() {
             d3.csv(sData).then(assemblyBar)
         }
     }, [barViz])
+    
 
     // Assembly Bar Chart
     const assemblyBar = (data) => {
-        // console.log("assembly data:", data);
+        console.log("assembly data:", data);
+
 
         // Formatting the data
         data.forEach(d => {
@@ -51,6 +53,7 @@ export default function NYRepresenatives() {
             return d3.descending(a.homesFlipped, b.homesFlipped);
         })
 
+
         // Maximum number in homes flipped 
         const max = d3.max(sortedData, d => d.homesFlipped);
         
@@ -61,9 +64,10 @@ export default function NYRepresenatives() {
 
         // Position of where the bar should be in the screen
         const positionScale = d3.scaleBand()
-        .range([0, height])
-        .domain(sortedData.map(d =>  d.memberName))
-        .padding(0.1);
+            .range([0, height])
+            .domain(sortedData.map(d =>  d.districtName))
+            .padding(0.3);
+
         
         // Tooltip Container
         const tooltip = d3.select(".tooltip__container")
@@ -75,8 +79,10 @@ export default function NYRepresenatives() {
             .style('background', 'rgba(235,95,42,0.8)')
             .style('color', 'white');
 
-        const u = d3.selectAll('rect').data(data)
-        const t = d3.selectAll('text').data(data)
+        // Updating rects and text data 
+        const u = d3.selectAll('rect').data(sortedData)
+        const t = d3.selectAll('text').data(sortedData)
+
 
         // Container for Bar Chart
         const container = d3.select(d3Container.current)
@@ -92,19 +98,18 @@ export default function NYRepresenatives() {
             .enter()
             .append('g')
             .attr('class','groups');
-        
 
-        // District and Assembly Member Text
+        // Assembly Member Text
         graph.append('text')
             .merge(t) 
-            .attr('x', function(d) {return widthScale(d) })
-            .attr('y', function(d) {return positionScale(d.memberName) * 3 + 10 })
-            .attr('fill','blue')
+            .attr('x', function(d) { return widthScale(d.homesFlipped) + margin.left + 20 })
+            .attr('y', function(d) {return positionScale(d.districtName ) + margin.top})
+            .attr('fill','#0F26A6')
             .style("font-size", "10px")
-            .attr("dy", ".5em")
+            .style('font-weight','bold')
+            .attr("dy", ".9em")
             .attr('class', 'mem__info')
-            .text(function (d) {return  d.districtName + ' - ' + d.memberName});
-
+            .text(function (d) {return  d.districtName }); 
 
 
         // Setting Bar Chart size 
@@ -112,19 +117,25 @@ export default function NYRepresenatives() {
             .append('rect')
             .merge(u) 
             .attr('fill', 'blue')
-            .attr("width", 0)
+            // .attr("width", 0)
             .attr('height', positionScale.bandwidth())
-            .attr('y', d => positionScale(d.memberName) * 3 + 20)
-            .attr('class','bar')  
+            .attr('x',  5)
+            .attr('y', d => positionScale(d.districtName))
+            // .attr('class','bar')  
             .transition()
-            .duration(1600)
+            .duration(200)
             .attr('width', d => widthScale(d.homesFlipped))
+            .attr('transform',`translate(${margin.left}, ${margin.top})`);
 
+
+            
+        
+    
         d3.selectAll('rect')
             .on('mouseover', (e,d) => {
-                d3.select(e.target).transition().attr('fill','rgba(205, 209, 228)')
+                d3.select(e.target).transition().attr('fill','#F5AA8F')
                 tooltip
-                    .html(`<div>  ${d.homesFlipped} </div> `)
+                    .html(`<div>  ${d.homesFlipped} homes flipped in </br> ${d.memberName}'s District </div> `)
                     .style('display', 'absolute')
                     .style('visibility', 'visible')
                     .style('top', e.pageY + 10 + 'px')
@@ -132,18 +143,22 @@ export default function NYRepresenatives() {
             })
             .on('mouseout', (e) => {
             d3.select(e.target).transition().attr('fill','blue')
-                
-            })
+         
+            });
+
 
         //exit
         u.exit()
         .transition()
-        .duration(300)
+        .duration(350)
         .remove()
+
+
         t.exit()
         .transition()
-        .duration(300)
+        .duration(350)
         .remove()
+
     }
 
 
@@ -182,7 +197,8 @@ export default function NYRepresenatives() {
             <div className='tooltip__container'></div>
 
             <div className='nyr__4'>
-                <svg className='vis__area' ref={d3Container}></svg>
+                <svg className='vis__area' ref={d3Container}>
+                </svg>
             
                 {barViz == 'assembly' ? 
                     <img src={assemblyImg} className='img__map' />  : 
