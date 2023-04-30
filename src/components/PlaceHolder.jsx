@@ -1,212 +1,316 @@
-import React, {Component, useEffect, useState} from 'react';
+import React ,{useEffect, useState, useRef} from 'react'
 import '../styles/NYRepresentatives.scss';
-import aData from '../data/assemblyDF_Mem_HomesFlipped.csv';
-import sData from '../data/senatorMem_HomesFlipped.csv'
+import aData from '../data/Assembly_HomesFlipped.csv';
+import sData from '../data/Senate_HomesFlipped.csv';
 import * as d3 from 'd3';
 
+import assemblyImg from '../imgs/assembly_HF.png'
+import senateImg from '../imgs/senate_HF.png' 
 
 
 export default function NYRepresenatives() {
 
-    // States for Datsets
-    const [assemblyData, setAssemblyData] = useState(null) // will have an object 
-    const [senateData, setSenateData] = useState(null)
+    //  -- - - -- - - - -- - -- - -- -- -- - -- -- - -- - -- -
 
-    const [vizType, setVizType] = useState(null)
 
-    // Function that accepts any data and state where the string object is stored
-    const fetchText = async(data, stateName) => { // asynchronous call puts a request and wait to some time for a result
+    // Toggle between assembly or senate
+    const [isActive, setActive] = useState('false');
 
-        fetch(data)
-            .then((res) => {
-                if(res.ok){
-                    return res.text()
-                }
-                throw new Error('Server says bad response')
-            })
-            .then((res) => stateName(res))
-            .catch((err) => console.log(err))
+
+    // Toggle Class Function
+
+    const toggleClass = () => {
+        setActive(!isActive)
     }
 
-    // Fetching and storing data to state
-    fetchText(aData, setAssemblyData)
-    fetchText(sData, setSenateData)
-    
-    useEffect(() => {
-        showViz()
-    },[vizType])
+    //  -- - - -- - - - -- - -- - -- -- -- - -- -- - -- - -- -
+    // SVG Ref Selector 
+    const d3Container = useRef(null);
 
-    // console.log(assemblyData)
-    const showViz =() => {
-        if(vizType == 'assembly'){
+    // Chart Dimensions
+    const margin = {top: 10, right: 90, bottom: 10, left: 100};
+    const width = 420 - margin.left - margin.right;
+    const height = 800 - margin.top - margin.bottom;
 
-        // Parsing the data to CSV and saving it to a variable
-        let data = d3.csvParse(assemblyData); // d3.csvParse takes a csv string & return an array of objects, each object represent one row of each table  
+    //  -- - - -- - - - -- - -- - -- -- -- - -- -- - -- - -- -
+    // useEffect(() => {
+    //     if(barViz == 'assembly') {
+    //         d3.csv(aData).then(assemblyBarChart)
 
+    //     } else if(barViz == 'senate') {
+    //         d3.csv(sData).then(senateBarChart)
+            
+    //     }
+    // }, [barViz])
 
-        // Chart Dimensions
-        const margin = {top: 20, right: 30, bottom: 40, left: 140};
-        const width = 370 - margin.left - margin.right;
-        const height = 750;
+    //  -- - - -- - - - -- - -- - -- -- -- - -- -- - -- - -- -
+
+    // Bar Chart
+    const assemblyBarChart = (data) => {
+        console.log(" assembly data:", data);
 
 
         // Formatting the data
         data.forEach(d => {
-            d.gbat_assemblyDistrict = d.gbat_assemblyDistrict;
+            d.districtName = d.districtName;
             d.homesFlipped = +d.homesFlipped;
             d.memberName = d.memberName;
         })
 
         // Sorting data by Homes Flipped and saving to a new variable
         let sortedData = data.sort(function(a,b){
-            return d3.descending(a.homesFlipped,
-                    b.homesFlipped)
-            })
-        
-        // Create SVG
-        const svg = d3.select('.vis')
-                    .append('svg')
-                    .attr('width', width + margin.left + margin.right)
-                    .attr('height', height + margin.top + margin.bottom)
-                    .append('g')
-                    .attr('transform', 
-                        'translate(' + margin.left + ',' + margin.top + ')')
-            
-        
+            return d3.descending(a.homesFlipped, b.homesFlipped);
+        })
+
+
         // Maximum number in homes flipped 
-        const max = d3.max(sortedData, d => d.homesFlipped)
+        const max = d3.max(sortedData, d => d.homesFlipped);
         
-        // Add x axis 
+        // Add X Axis widthScale
         const x = d3.scaleLinear()
-                    .domain([0, max])
-                    .range([0, width])
+            .domain([0, max])
+            .range([0, width]);
 
-                    
-        svg.append('g')
-            .attr('transform', 'translate(0' + height + ')')
-            // .call(d3.axisBottom(x))
-            .selectAll('text')
-            // .attr('transform', 'translate(-10, 0)rotate(-45)')
-            .style('text-anchor', 'end')   
-            
-        // add y axis
+        // Position of where the bar should be in the screen
         const y = d3.scaleBand()
-                    .range([0, height])
-                    .domain(sortedData.map(d =>  d.memberName  ))
-                    .padding(0.2) 
-            
-        svg.append('g')
-            .call(d3.axisLeft(y))
-            .style('margin-top',34)
-            // .style('color' ,'orange')
+            .range([0, height])
+            .domain(sortedData.map(d =>  d.districtName))
+            .padding(0.3);
 
-        // Bars
-        svg.selectAll('rects')
+
+        // Container for Bar Chart
+        const container = d3.select(d3Container.current)
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+        
+
+        // Selecting all the rects and joining it with our data, one rect for each member in our data
+        let graph = container
+            .selectAll('g')
             .data(sortedData)
             .enter()
+            .append('g')
+            .attr('class','groups');
+
+        // Setting Bar Chart size 
+        graph
             .append('rect')
-            .attr('x', x(0))
-            .attr('y', function(d) {return y(d.memberName)})
-            .attr('width', function(d) {return x(d.homesFlipped)})
-            .attr("height", y.bandwidth() )
-            .attr("fill", "#69b3a2")
-        }else if(vizType == 'senate'){
+            .transition()
+            .duration(200)
+            .attr('fill', 'blue')
+            .attr('width', d =>  x(d.homesFlipped))
+            .attr('height',  y.bandwidth())
+            .attr('x',  0)
+            .attr('y', d => y(d.districtName))
+            .attr('class','bar')  
+            .attr('transform',`translate(${margin.left}, ${margin.top})`);
 
-        // Parsing the data to CSV and saving it to a variable
-        let senate = d3.csvParse(senateData); // d3.csvParse takes a csv string & return an array of objects, each object represent one row of each table  
+        // Tooltip Container
+        const tooltip = d3.select(".tooltip__container")
+            .style('position', 'absolute')
+            .style('z-index', '10')
+            .style('visibility', 'hidden')
+            .style('padding', '10px')
+            .style('border-radius','25pt')
+            .style('background', 'rgba(235,95,42,0.8)')
+            .style('color', 'white');
+
+        d3.selectAll('rect')
+        .on('mouseover', (e,d) => {
+            d3.select(e.target).transition().attr('fill','#F5AA8F')
+            tooltip
+                .html(`<div>  ${d.homesFlipped} homes flipped in </br> ${d.memberName}'s District </div> `)
+                .style('display', 'absolute')
+                .style('visibility', 'visible')
+                .style('top', e.pageY + 10 + 'px')
+                .style('left', e.pageX + 10 + 'px')
+        })
+        .on('mouseout', (e) => {
+        d3.select(e.target).transition().attr('fill','blue')
+     
+        });
 
 
-        // Chart Dimensions
-        const margin = {top: 20, right: 30, bottom: 40, left: 140};
-        const width = 370 - margin.left - margin.right;
-        const height = 750;
+    
+
+        //  Member Text
+        graph.append('text')
+            .attr('x', function(d) { return x(d.homesFlipped) + margin.left + 20 })
+            .attr('y', function(d) {return y(d.districtName ) + margin.top})
+            .attr('fill','#0F26A6')
+            .style("font-size", "10px")
+            .style('font-weight','bold')
+            .attr("dy", ".9em")
+            .attr('class', 'mem__info')
+            .text(function (d) {return  d.districtName }); 
+
+        //exit
+        d3.selectAll('.groups').exit()
+        .remove();
+    }
+
+
+    // Senate Bar Chart
+    const senateBarChart = (data) => {
+        console.log("senate data:", data);
+
 
         // Formatting the data
-        senate.forEach(d => {
-            d.gbat_stateSenatorialDistrict = d.gbat_stateSenatorialDistrict;
+        data.forEach(d => {
+            d.districtName = d.districtName;
             d.homesFlipped = +d.homesFlipped;
             d.memberName = d.memberName;
         })
 
         // Sorting data by Homes Flipped and saving to a new variable
-        let sortedData = senate.sort(function(a,b){
-            return d3.descending(a.homesFlipped,
-                    b.homesFlipped)
-            })
-        
+        let sortedData = data.sort(function(a,b){
+            return d3.descending(a.homesFlipped, b.homesFlipped);
+        })
 
-        // Create SVG
-        const svg = d3.select('.vis')
-                    .append('svg')
-                    .attr('width', width + margin.left + margin.right)
-                    .attr('height', height + margin.top + margin.bottom)
-                    .append('g')
-                    .attr('transform', 
-                        'translate(' + margin.left + ',' + margin.top + ')')
-                    
+
         // Maximum number in homes flipped 
-        const max = d3.max(sortedData, d => d.homesFlipped)
+        const max = d3.max(sortedData, d => d.homesFlipped);
         
-        // Add x axis 
+        // Add X Axis widthScale
         const x = d3.scaleLinear()
-                    .domain([0, max])
-                    .range([0, width])
-        svg.append('g')
-            .attr('transform', 'translate(0' + height + ')')
-            // .call(d3.axisBottom(x))
-            .selectAll('text')
-            // .attr('transform', 'translate(-10, 0)rotate(-45)')
-            .style('text-anchor', 'end')  
-        
-        // add y axis
+            .domain([0, max])
+            .range([0, width]);
+
+        // Position of where the bar should be in the screen
         const y = d3.scaleBand()
-                    .range([0, height])
-                    .domain(sortedData.map(d =>  d.memberName  ))
-                    .padding(0.2) 
+            .range([0, height])
+            .domain(sortedData.map(d =>  d.districtName))
+            .padding(0.3);
 
-        svg.append('g')
-        .call(d3.axisLeft(y))
-        .style('margin-top',34)
-        // .style('color' ,'orange')
+        // Updating rects and text data 
+        const u = d3.selectAll('rect').data(data)
+        const t = d3.selectAll('text').data(data)
 
-        // Bars
-        svg.selectAll('rects')
+
+        // Container for Bar Chart
+        const container = d3.select(d3Container.current)
+            .attr('width', width + margin.left + margin.right)
+            .attr('height', height + margin.top + margin.bottom)
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+        
+
+        // Selecting all the rects and joining it with our data, one rect for each member in our data
+        let graph = container
+            .selectAll('g')
             .data(sortedData)
             .enter()
+            .append('g')
+            .attr('class','groups');
+
+        // Setting Bar Chart size 
+        graph
             .append('rect')
-            .attr('x', x(0))
-            .attr('y', function(d) {return y(d.memberName)})
-            .attr('width', function(d) {return x(d.homesFlipped)})
-            .attr("height", y.bandwidth() )
-            .attr("fill", "#69b3a2")        
+            .transition()
+            .duration(200)
+            .attr('fill', 'blue')
+            .attr('width', d =>  x(d.homesFlipped))
+            .attr('height',  y.bandwidth())
+            .attr('x',  0)
+            .attr('y', d => y(d.districtName))
+            .attr('class','bar')  
+            .attr('transform',`translate(${margin.left}, ${margin.top})`);
 
-        console.log("senate",senate)
-        }
+        // Tooltip Container
+        const tooltip = d3.select(".tooltip__container")
+            .style('position', 'absolute')
+            .style('z-index', '10')
+            .style('visibility', 'hidden')
+            .style('padding', '10px')
+            .style('border-radius','25pt')
+            .style('background', 'rgba(235,95,42,0.8)')
+            .style('color', 'white');
 
-    }
+        d3.selectAll('rect')
+        .on('mouseover', (e,d) => {
+            d3.select(e.target).transition().attr('fill','#F5AA8F')
+            tooltip
+                .html(`<div>  ${d.homesFlipped} homes flipped in </br> ${d.memberName}'s District </div> `)
+                .style('display', 'absolute')
+                .style('visibility', 'visible')
+                .style('top', e.pageY + 10 + 'px')
+                .style('left', e.pageX + 10 + 'px')
+        })
+        .on('mouseout', (e) => {
+        d3.select(e.target).transition().attr('fill','blue')
+     
+        });
+
+
+    
+
+        //  Member Text
+        graph.append('text')
+            .attr('x', function(d) { return x(d.homesFlipped) + margin.left + 20 })
+            .attr('y', function(d) {return y(d.districtName ) + margin.top})
+            .attr('fill','#0F26A6')
+            .style("font-size", "10px")
+            .style('font-weight','bold')
+            .attr("dy", ".9em")
+            .attr('class', 'mem__info')
+            .text(function (d) {return  d.districtName }); 
+
+        //exit
+        graph.exit()
+        .remove();
+
+        d3.selectAll('.groups').exit()
+        .remove();
+    }    
+
 
 
   return (
+
     <section className="ny__reps">
-        <h1> Homes Flipped in New York City 2017 - 2021 by State Legislative District </h1>
 
-        <div >
-            <button 
-                className="button"
-                onClick={() => setVizType('assembly')}> 
-                Assembly Districts 
-            </button>
-
-            <button
-                className='button'
-                onClick={()=> setVizType('senate')}>
-                Senate Districts 
-            </button>
+        <div className='nyr__1'>
+            <h1 id='nyr__head'>How many homes were flipped in your district? </h1> <br/><br/>
+            <span id='nyr__subhead'>Homes flipped in NYC, 2017 - 2021 <br/>by State Legislative District </span>
         </div>
 
 
-        <div className='vis' > </div>
-        
+        <div className='nyr__2'>
+            <div className='nyr__3'>
+            <div className="ny__reps__btns">
+                <button 
+                    className="button"
+                    id='btn-left'
+                    onClick={toggleClass}> 
+                    Assembly Districts 
+                </button>
+
+                <button
+                    className='button'
+                    onClick={toggleClass}>
+                    Senate Districts 
+                </button>
+            </div>
+            <p id="ny__reps__note"> &nbsp; Click or hover over the chart to see the number of flips in each district &nbsp;</p>
+            </div>
+    
+            <div className='tooltip__container'></div>
+
+            <div className={isActive ? "active" : "inactive"}>
+
+                {isActive ? assemblyBarChart : senateBarChart}
+
+                <svg className='vis__area' ref={d3Container}>
+                </svg>
+\
+             </div>
+        </div>
+
+
+
+
+
+
     </section>
   )
 }

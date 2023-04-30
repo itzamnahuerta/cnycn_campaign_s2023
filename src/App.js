@@ -1,7 +1,7 @@
 
 import './App.scss';
 import About from './components/About.jsx';
-import NYRepresenatives from './components/NYRepresenatives.jsx';
+import BarChart from './components/BarChart'
 import Title from './components/Title';
 import DensityMap from './components/DensityMap';
 import Methodology from './components/Methodology';
@@ -19,7 +19,7 @@ function App() {
       <Title/>
       <About/>
       <DensityMap/>
-      <NYRepresenatives/>
+      <BarChart/>
       <Methodology/>
       </div>
     </section>
