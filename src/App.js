@@ -1,27 +1,30 @@
-
+import React from 'react';
+import { Routes, Route } from "react-router-dom";
+// import { HashLink as Link } from 'react-router-hash-link';
 import './App.scss';
 import About from './components/About.jsx';
 import BarChart from './components/BarChart'
 import Title from './components/Title';
-import DensityMap from './components/DensityMap';
+
 import Methodology from './components/Methodology';
 
 function App() {
-  window.addEventListener('scroll', () => {
-    document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
-  }, false);
-  
+
+
   return (
     <section>
       <div className="progress"></div>
-
-      <div className="page__wrap">
       <Title/>
       <About/>
-      <DensityMap/>
       <BarChart/>
       <Methodology/>
-      </div>
+      
+      {/* <Routes>
+        <Route path='/home' element={<Title/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/ny_state_leg' element={<BarChart/>} />
+      </Routes> */}
+
     </section>
   );
 }

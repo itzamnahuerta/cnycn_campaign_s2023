@@ -1,18 +1,24 @@
 import React from 'react';
+import { HashLink } from 'react-router-hash-link';
 import '../styles/About.scss';
 
-// boorughs
+// boroughs svgs
 import nyc_outline from '../imgs/nyc_outline_1.svg';
+import queens from '../imgs/boroughs/queens.svg';
+import brooklyn from '../imgs/boroughs/brooklyn.svg';
+import bronx from '../imgs/boroughs/bronx.svg';
+import manhattan from '../imgs/boroughs/manhattan.svg';
 
-import queens from '../imgs/boroughs/queens.svg'
-import brooklyn from '../imgs/boroughs/brooklyn.svg'
-import bronx from '../imgs/boroughs/bronx.svg'
-import manhattan from '../imgs/boroughs/manhattan.svg'
+// bar chart component
+import BarChart from './BarChart';
+
+import DensityMap from './DensityMap'
 
 export default function About() {
 
   return (
     <React.Fragment>
+
     <section className='about__container__1'>
 
 
@@ -22,7 +28,7 @@ export default function About() {
 
       <div id='a2'>
         <h1> Predatory house-flipping is when a professional investor buys a home and resells it for a quick profit, driving up housing costs citywide and especially in low-income communities of color.</h1>
-        <button id='btn__maps'> Jump to District Maps </button>
+        <HashLink smooth to='/#ny__reps'  id='btn__maps'>  Jump to District Maps </HashLink>
       </div>
 
       <img id='nyc__img' src={nyc_outline} />
@@ -33,7 +39,7 @@ export default function About() {
         would tax the profits on properties resold by professional investors within two years of purchase. </h1>
     </section>
 
-    <section className='about__container__3'>
+    <section className='about__container__3' id='about__container__3'>
       <div className='a_c_3_wrapper'>
 
         <h1 id='c1'> There were a total of
@@ -72,7 +78,11 @@ export default function About() {
 
         <h1 className='c3__child__num' id='c9'> 6% </h1>
       </div>
+    
     </section>
+
+    <DensityMap/>
+    <section id='ny__reps'> <BarChart/>  </section>
 
     </React.Fragment>
 
