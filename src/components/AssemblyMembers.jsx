@@ -170,11 +170,11 @@ const barChart = (data) => {
     // Maximum Number Label
     container
         .append("text")
-        .attr("x", width + 5)
-        .attr("y", (margin.top / 14))
+        .attr("x", width + 12)
+        .attr("y", (margin.top - 25))
         .attr("text-anchor", "end")
         .text("1,180")
-        .style("font-size", "17px")
+        .style("font-size", "12px")
         .style("font-weight", "regular")
         .style('font-family','Helvetica')
         .attr("fill", "#EB5F2A");
