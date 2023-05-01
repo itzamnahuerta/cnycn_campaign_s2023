@@ -109,11 +109,16 @@
         .nyr__4{
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            .nyreps__vis__wrapper{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
 
             .img__map{
                 align-self: center;
                 max-width: 70%;
+                width: 70%;
                 height: auto;
                 animation: fadeIn ease 5s;
                 -webkit-animation: fadeIn ease 5s;
@@ -256,18 +261,66 @@
             justify-content: center;
             margin-bottom: 2em;
             .img__map{
-                max-width: 45%;
-                height: fit-content;
+                align-self: center;
+                max-width: 70%;
+                height: auto;
+                animation: fadeIn ease 5s;
+                -webkit-animation: fadeIn ease 5s;
+                -moz-animation: fadeIn ease 5s;
+                -o-animation: fadeIn ease 5s;
+                -ms-animation: fadeIn ease 5s;
             }
             img{
                 max-width: 45%;
                 height: fit-content;
             }
             
+            
         } 
         .tooltip__container{
             font-family:  Helvetica, sans-serif;
         }
+        .tooltip__container{
+            font-family:  Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+
+            .tooltip-wrapper{
+                display: flex;
+                flex-direction: column;
+
+
+                .home-img{
+                    align-self: center;
+                    height: 30px;
+                    width:25px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-image: url("../imgs/house-svgrepo-com.png");
+
+
+                }
+                .homes-flipped-text{
+                    font-size: 2em;
+                    align-self: center;
+                    color: $c7;
+                }
+                .rep-wrapper{
+                    align-self: center;
+                    font-size: 12px;
+                    #rep_w__1{
+                        font-size: 1.2em;
+                        text-decoration: underline;
+                        margin-bottom: 5px;   
+                    }
+                    #rep_w__2{
+                        font-size: 1.2em;
+                        font-weight: bold;
+                    }
+                }
+            } 
+        }          
+
     }
 }
 
