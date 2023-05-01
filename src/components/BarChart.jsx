@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // import d3 barchart components
 import SenateMembers from './SenateMembers';
@@ -9,9 +9,7 @@ import AssemblyMembers from './AssemblyMembers';
 export default function BarChart() {
 
     // Toggle between assembly or senate
-
     const [buttons, setButtons] = React.useState(true);
-
 
   return (
     <section className="ny__reps">
