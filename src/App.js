@@ -16,7 +16,7 @@ function App() {
       <div className="progress"></div>
       <Title/>
       <About/>
-      <BarChart/>
+      {/* <BarChart/> */}
       <Methodology/>
       
       {/* <Routes>
