@@ -47,12 +47,30 @@
         #btn__maps{
             text-decoration: none;
             padding:10px;
-            width: 200px;
-            height:3em;
-            border-radius: 2em;
+            border: 2px solid $c7;
             background-color: $c3;
-            color: $bg;
-            border: none;
+            color:$bg;
+            border-radius: 25px;
+            height: 5vh;
+            width: 140px;
+            margin-left: 2%;
+            font-size: 10px;
+                            
+            &:active{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:focus{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:target {
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
         }
     }
 
@@ -76,6 +94,7 @@
                 color:$c3;
                 border-bottom: 3px solid $c7;
             }
+            
             
         }
     }
@@ -218,14 +237,30 @@
         #btn__maps{
             text-decoration: none;
             padding:10px;
-            width: 300px;
-            height:3em;
-            border-radius: 2em;
+            border: 2px solid $c7;
             background-color: $c3;
-            color: $bg;
-            border: none;
-
-
+            color:$bg;
+            border-radius: 25px;
+            height: 5vh;
+            width: 140px;
+            margin-left: 2%;
+            font-size: 10px;
+                            
+            &:active{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:focus{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:target {
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
         }
 
     }
@@ -392,14 +427,30 @@
         #btn__maps{
             text-decoration: none;
             padding:10px;
-            width: 300px;
-            height:3em;
-            border-radius: 2em;
+            border: 2px solid $c7;
             background-color: $c3;
-            color: $bg;
-            border: none;
-
-
+            color:$bg;
+            border-radius: 25px;
+            height: 5vh;
+            width: 140px;
+            margin-left: 2%;
+            font-size: 14px;
+                            
+            &:active{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:focus{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:target {
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
         }
 
     }
@@ -565,14 +616,30 @@
         #btn__maps{
             text-decoration: none;
             padding:10px;
-            text-align: center;
-            width: 300px;
-            height:3em;
-            border-radius: 2em;
+            border: 2px solid $c7;
             background-color: $c3;
-            color: $bg;
-            border: none;
-
+            color:$bg;
+            border-radius: 25px;
+            height: 5vh;
+            width: 140px;
+            margin-left: 2%;
+            font-size: 18px;
+                            
+            &:active{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:focus{
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
+            &:target {
+                background-color: $bg;
+                color: $c3;
+                filter: drop-shadow(0 0 0.45rem crimson);
+            }
         }
 
     }
