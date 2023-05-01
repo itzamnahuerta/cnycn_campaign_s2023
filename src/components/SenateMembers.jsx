@@ -129,8 +129,8 @@ const barChart = (data) => {
                 </div>
             </div>`)
             .style('position', 'absolute')
-            .style('top', e.pageY - 10 + 'px')
-            .style('left', e.pageX + 35 + 'px')
+            .style('top', e.pageY + 20 + 'px')
+            .style('left', e.pageX + 5 + 'px')
             .style('font-size','8pt')
     })
     .on('mouseout', (e) => {
