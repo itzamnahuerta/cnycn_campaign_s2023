@@ -114,6 +114,9 @@
                 flex-direction: column;
                 justify-content: center;
             }
+            .vis__area{
+                align-self: center;
+            }
 
             .img__map{
                 align-self: center;
@@ -127,10 +130,6 @@
                 -ms-animation: fadeIn ease 5s;
             }
         } 
-        .tooltip__container{
-            font-family:  Helvetica, sans-serif;
-        }
-
 
         .tooltip__container{
             font-family:  Helvetica, sans-serif;
@@ -257,12 +256,20 @@
         }
         .nyr__4{
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            margin-bottom: 2em;
+            flex-direction: column;
+            .nyreps__vis__wrapper{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .vis__area{
+                align-self: center;
+            }
+
             .img__map{
                 align-self: center;
                 max-width: 70%;
+                width: 40%;
                 height: auto;
                 animation: fadeIn ease 5s;
                 -webkit-animation: fadeIn ease 5s;
@@ -270,12 +277,6 @@
                 -o-animation: fadeIn ease 5s;
                 -ms-animation: fadeIn ease 5s;
             }
-            img{
-                max-width: 45%;
-                height: fit-content;
-            }
-            
-            
         } 
         .tooltip__container{
             font-family:  Helvetica, sans-serif;
@@ -402,21 +403,31 @@
                 color: $bg;
             }
         }
-        .nyreps__vis__wrapper{
+        .nyr__4{
             display: flex;
-            flex-direction: row;
-            // justify-content: center;
-            // background-color: yellow;
-            .vis__area{
-                // background-color: orange;
+            flex-direction: column;
+            .nyreps__vis__wrapper{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
             }
+            .vis__area{
+                align-self: center;
+            }
+
             .img__map{
-                // border: 3px solid red;
-                max-width: 30%;
-                height: fit-content;
-                margin-left: 10%;
+                align-self: center;
+                max-width: 70%;
+                width: 40%;
+                height: auto;
+                animation: fadeIn ease 5s;
+                -webkit-animation: fadeIn ease 5s;
+                -moz-animation: fadeIn ease 5s;
+                -o-animation: fadeIn ease 5s;
+                -ms-animation: fadeIn ease 5s;
             }
         } 
+
 
         .tooltip__container{
             font-family:  Helvetica, sans-serif;
