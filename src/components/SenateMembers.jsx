@@ -76,7 +76,7 @@ const barChart = (data) => {
         .attr('y', d =>  y(d.districtName))
         .attr('height',  y.bandwidth())
         .transition()
-        .duration(2000)
+        .duration(1000)
         .delay(function(d, i) {
             return i * 100
             })
