@@ -1,4 +1,4 @@
-import React ,{useEffect, useState, useRef} from 'react'
+import React from 'react'
 import '../styles/NYRepresentatives.scss';
 import sData from '../data/Senate_HomesFlipped.csv';
 import senateImg from '../imgs/senate_hf.png' ;
