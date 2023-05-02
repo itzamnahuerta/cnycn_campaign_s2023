@@ -2,7 +2,7 @@ import React from 'react'
 import '../styles/NYRepresentatives.scss';
 import sData from '../data/Senate_HomesFlipped.csv';
 import senateImg from '../imgs/senate_hf.png' ;
-
+import senateGif from '../imgs/senate_giphy.gif';
 import * as d3 from 'd3';
 
 // Chart Dimensions
