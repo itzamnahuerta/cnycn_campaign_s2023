@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/static/css/main.82a71c8a.css",
-    "main.js": "/static/js/main.3f8cee58.js",
+    "main.js": "/static/js/main.0f3f0ade.js",
     "static/js/787.b09e45f2.chunk.js": "/static/js/787.b09e45f2.chunk.js",
     "static/media/assembly_hf.png": "/static/media/assembly_hf.5e3567fafcf2a67b91cf.png",
     "static/media/density_HF.png": "/static/media/density_HF.c4b9fe496d71ba7630fc.png",
     "static/media/senate_hf.png": "/static/media/senate_hf.d883aa36f7a8079fd250.png",
     "static/media/PrattCenter_logo_black.png": "/static/media/PrattCenter_logo_black.81887b02d05f7caf216f.png",
+    "static/media/senate_giphy.gif": "/static/media/senate_giphy.ca3d59194bd08d39f687.gif",
     "static/media/nyc_outline_1.svg": "/static/media/nyc_outline_1.637c1189055a56595d39e97393fd0ad7.svg",
     "static/media/queens.svg": "/static/media/queens.d021170a931357a4e9b3f20a17c32010.svg",
     "static/media/brooklyn.svg": "/static/media/brooklyn.24be98b1bc8f1785cdea6d78acb28601.svg",
@@ -18,11 +19,11 @@
     "static/media/Senate_HomesFlipped.csv": "/static/media/Senate_HomesFlipped.01735739c5f128461bd2.csv",
     "index.html": "/index.html",
     "main.82a71c8a.css.map": "/static/css/main.82a71c8a.css.map",
-    "main.3f8cee58.js.map": "/static/js/main.3f8cee58.js.map",
+    "main.0f3f0ade.js.map": "/static/js/main.0f3f0ade.js.map",
     "787.b09e45f2.chunk.js.map": "/static/js/787.b09e45f2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.82a71c8a.css",
-    "static/js/main.3f8cee58.js"
+    "static/js/main.0f3f0ade.js"
   ]
 }
