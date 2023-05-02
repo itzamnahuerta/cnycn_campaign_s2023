@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.932b65a7.css",
-    "main.js": "/static/js/main.0978cf75.js",
+    "main.css": "/static/css/main.82a71c8a.css",
+    "main.js": "/static/js/main.0f3f0ade.js",
     "static/js/787.b09e45f2.chunk.js": "/static/js/787.b09e45f2.chunk.js",
-    "static/media/senator_HF.geojson": "/static/media/senator_HF.7b6c0943f9b629cd14b2.geojson",
-    "static/media/assembly_HF.geojson": "/static/media/assembly_HF.e56814e83d5fa6fc5c43.geojson",
-    "static/media/density_HF.png": "/static/media/density_HF.3a238fff2b450875c07f.png",
-    "static/media/senate_svg_hf.svg": "/static/media/senate_svg_hf.b08cc7ba03a99f397bdaedea974b36cd.svg",
-    "static/media/assembly_HF.svg": "/static/media/assembly_HF.34438e74ed29358d6c90efc69b7871f5.svg",
-    "static/media/KareliaWeb-Regular.otf": "/static/media/KareliaWeb-Regular.cf10037406528b664509.otf",
-    "static/media/Kalice-Regular.otf": "/static/media/Kalice-Regular.215324be7680040439b1.otf",
+    "static/media/assembly_hf.png": "/static/media/assembly_hf.5e3567fafcf2a67b91cf.png",
+    "static/media/density_HF.png": "/static/media/density_HF.c4b9fe496d71ba7630fc.png",
+    "static/media/senate_hf.png": "/static/media/senate_hf.d883aa36f7a8079fd250.png",
+    "static/media/PrattCenter_logo_black.png": "/static/media/PrattCenter_logo_black.81887b02d05f7caf216f.png",
+    "static/media/senate_giphy.gif": "/static/media/senate_giphy.ca3d59194bd08d39f687.gif",
+    "static/media/nyc_outline_1.svg": "/static/media/nyc_outline_1.637c1189055a56595d39e97393fd0ad7.svg",
+    "static/media/queens.svg": "/static/media/queens.d021170a931357a4e9b3f20a17c32010.svg",
+    "static/media/brooklyn.svg": "/static/media/brooklyn.24be98b1bc8f1785cdea6d78acb28601.svg",
+    "static/media/bronx.svg": "/static/media/bronx.1ddf484a5587a8e3b384ecd96bc527da.svg",
+    "static/media/manhattan.svg": "/static/media/manhattan.31a7c831bf5895101b2dd05c38b9b109.svg",
+    "static/media/nyc__homes.svg": "/static/media/nyc__homes.f49a160adff1fcd501043b2297d5a0aa.svg",
+    "static/media/cnycn_logo_black.png": "/static/media/cnycn_logo_black.4718bea5c96b2baa5215.png",
     "static/media/Assembly_HomesFlipped.csv": "/static/media/Assembly_HomesFlipped.9d56ca845008132e729c.csv",
     "static/media/Senate_HomesFlipped.csv": "/static/media/Senate_HomesFlipped.01735739c5f128461bd2.csv",
     "index.html": "/index.html",
-    "main.932b65a7.css.map": "/static/css/main.932b65a7.css.map",
-    "main.0978cf75.js.map": "/static/js/main.0978cf75.js.map",
+    "main.82a71c8a.css.map": "/static/css/main.82a71c8a.css.map",
+    "main.0f3f0ade.js.map": "/static/js/main.0f3f0ade.js.map",
     "787.b09e45f2.chunk.js.map": "/static/js/787.b09e45f2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.932b65a7.css",
-    "static/js/main.0978cf75.js"
+    "static/css/main.82a71c8a.css",
+    "static/js/main.0f3f0ade.js"
   ]
 }
