@@ -201,7 +201,7 @@ const barChart = (data) => {
 
 export default function AssemblyMembers() {
 
-    // Render Data and Call BarChart FunctioN
+    // Render Data and Call BarChart Function
     d3.csv(aData).then(barChart)
 
   return (
