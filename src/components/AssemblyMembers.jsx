@@ -204,7 +204,6 @@ export default function AssemblyMembers() {
     // Render Data and Call BarChart Function
     d3.csv(aData).then(barChart)
 
-
   return (
     <section className='nyreps__vis__wrapper'>
         <div className='tooltip__container'></div>
