@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/NYRepresentatives.scss';
 import aData from '../data/Assembly_HomesFlipped.csv';
-import assemblyImg from '../imgs/assembly_HF.png';
+import assemblyImg from '../imgs/assembly_hf.png';
 import * as d3 from 'd3';
 
 
@@ -186,7 +186,7 @@ const barChart = (data) => {
         .attr("x2", lineEnd)
         .attr("y1", 5)
         .attr("y2", height - 10)
-        .attr("stroke-width", 2)
+        .attr("stroke-width", .5)
         .attr("stroke", "#364FD9")
         .attr("stroke-dasharray", "8,8");
 
@@ -209,7 +209,7 @@ export default function AssemblyMembers() {
     <section className='nyreps__vis__wrapper'>
         <div className='tooltip__container'></div>
         <svg className='vis__area' ></svg>
-        <img src={assemblyImg} className='img__map' width={'35%'} /> 
+        <img src={assemblyImg} className='img__map' width={'45%'} /> 
     </section>
   )
 }

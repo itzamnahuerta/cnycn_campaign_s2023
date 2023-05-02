@@ -1,7 +1,8 @@
 import React ,{useEffect, useState, useRef} from 'react'
 import '../styles/NYRepresentatives.scss';
 import sData from '../data/Senate_HomesFlipped.csv';
-import senateImg from '../imgs/senate_HF.png' ;
+import senateImg from '../imgs/senate_hf.png' ;
+import senateGif from '../imgs/senate_giphy.gif';
 import * as d3 from 'd3';
 
 // Chart Dimensions
@@ -184,7 +185,7 @@ const barChart = (data) => {
         .attr("x2", lineEnd)
         .attr("y1", 10)
         .attr("y2", height - 10)
-        .attr("stroke-width", 2)
+        .attr("stroke-width", .5)
         .attr("stroke", "#364FD9")
         .attr("stroke-dasharray", "8,8");
         
