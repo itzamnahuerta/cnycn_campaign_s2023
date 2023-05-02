@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/NYRepresentatives.scss';
 import aData from '../data/Assembly_HomesFlipped.csv';
-import assemblyImg from '../imgs/assembly_hf.png';
+import assemblyImg from '../imgs/assembly_HF.png';
 import * as d3 from 'd3';
 
 
