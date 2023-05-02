@@ -125,7 +125,7 @@ const barChart = (data) => {
                 <div class='home-img'> </div>
                 <div class='homes-flipped-text'> ${d.homesFlipped} </div>
                 <div class='rep-wrapper'>
-                <span id='rep_w__1'>Assembly Represenative </span> <br/>
+                <span id='rep_w__1'>Assembly Representative </span> <br/>
                 <span id='rep_w__2'> ${d.memberName}</span>  
                 </div>
             </div>`)
