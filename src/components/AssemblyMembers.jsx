@@ -4,8 +4,6 @@ import aData from '../data/Assembly_HomesFlipped.csv';
 import assemblyImg from '../imgs/assembly_hf.png';
 import * as d3 from 'd3';
 
-// Testing out
-
 
 // Chart Dimensions
 const margin = {top: 20, right: 20, bottom: 10, left: 70};
